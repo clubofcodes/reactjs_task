@@ -4,9 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const full_name = { fname: "Rahul", lname: "Jagetia" };
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* Add a "owner_name" attribute to the App element(Component in react) */}
+    <App owner_name={full_name} />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,19 +1,11 @@
 import React from 'react';
 import logo from './Assets/lessRes.jpg';
 import './App.css';
+import Todo from './Components/Todo/Todo';
 
-// Input data that is passed into the React.component can be accessed by render() method via this.props.
-class HelloMessage extends React.Component {
-  render() {
-    return (
-      <div>
-        Hello {this.props.name}
-      </div>
-    );
-  }
-}
-
-function App() {
+// React Props are like function arguments in JavaScript and attributes in HTML.
+// The component receives the argument as a props object:
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
@@ -23,15 +15,19 @@ function App() {
               <img src={logo} className="App-logo" alt="logo" />
             </div>
             <div className='App-flip-box-back'>
-              <div style={{padding: '50px 0'}}>
-                <HelloMessage name="Rahul Jagetia" />
+              <div style={{ padding: '50px 0' }}>
+                {/* use the 'owner_name' attribute assigned in index.js is used here. */}
+                Hello, {props.owner_name.fname} {props.owner_name.lname}
                 <p>Welcome to React World!</p>
               </div>
             </div>
           </div>
         </div>
-
         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer"> Learn React </a>
+
+        <div>
+          <Todo />
+        </div>
       </header>
     </div>
   );

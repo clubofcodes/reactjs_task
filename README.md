@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Download this project zip or clone:
 
 ```bash
+# replace proje-dir with directory name.
 cd proje-dir
 
 # To install all node/npm packages listed in package.json file.
@@ -28,3 +29,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes and save the code.\
 You may also see any lint errors in the console.
+
+## Shortcuts
+
+Type rce in .js file `=>` react class component boilerplate.
+Type rfce in .js file `=>` react function component boilerplate.
