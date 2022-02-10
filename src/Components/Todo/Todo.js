@@ -13,6 +13,7 @@ class Todo extends React.Component {
     render() {
         return (
             <div style={{ marginBottom: '30px' }}>
+                <hr />
                 <h3>TODO ~ TASK</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div>

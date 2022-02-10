@@ -32,5 +32,6 @@ You may also see any lint errors in the console.
 
 ## Shortcuts
 
-Type rce in .js file `=>` react class component boilerplate.
-Type rfce in .js file `=>` react function component boilerplate.
+Type `rce` in .js file `=>` react class component boilerplate.
+Type `rpce` in .js file `=>` react class purecomponent boilerplate.
+Type `rfce` in .js file `=>` react function component boilerplate.
