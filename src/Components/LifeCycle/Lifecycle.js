@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Lifecycle.css';
 
 // Lifecycle methods can be implemented only in class components. => Mainly 3-Types: Creating, Updating and Deleting.
 // For functional components we can use hooks.

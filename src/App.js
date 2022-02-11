@@ -6,6 +6,13 @@ import Lifecycle from './Components/LifeCycle/Lifecycle';
 import Daily from './Components/Daily/Daily';
 import { UserProvider } from './Utils/userContext';
 import ParentComp from './Components/PureCompDemo/ParentComp';
+import ClassCompState from './Components/StateProps/ClassCompState';
+import FuncCompState from './Components/StateProps/FuncCompState';
+import ClassCompProps from './Components/StateProps/ClassCompProps';
+import FuncCompProps from './Components/StateProps/FuncCompProps';
+import EventBind from './Components/EventBinding/EventBind';
+import ParentComponent from './Components/ParentChildRelation/ParentComponent';
+import ConditionApproaches from './Components/ConditionalStatements/ConditionApproaches';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -39,7 +46,15 @@ function App(props) {
         </div>
 
         <div className='day-3'>
-
+          <ClassCompState />
+          <FuncCompState />
+          <ClassCompProps shortName="RJ" fullName="Rahul Jagetia" />
+          <FuncCompProps shortName="RJ" fullName="Rahul Jagetia">
+            <p>This is children props.</p>
+          </FuncCompProps>
+          <EventBind />
+          <ParentComponent />
+          <ConditionApproaches />
         </div>
 
         <div className='day-4'>
