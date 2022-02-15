@@ -1,12 +1,13 @@
 import React from 'react';
-import './Form.css';
+import './FormikForm.css';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 
-function Forms() {
+function FormikForm() {
     return (
         <div>
             <hr />
+            ={'>'} React Form Using Formik Library
             <Formik
                 initialValues={{ firstName: '', lastName: '', email: '', password: '', cpassword: '' }}
 
@@ -14,11 +15,11 @@ function Forms() {
                     firstName: Yup.string()
                         .min(3, 'Must be 3 characters or more')
                         .max(15, 'Must be 15 characters or less')
-                        .required('*First name is Required'),
+                        .required('*First name is Required')
+                        .matches(/^[A-Za-z ]+$/i, 'Only Alphabets allowed'),
                     lastName: Yup.string()
-                        .min(3, 'Must be 3 characters or more')
-                        .max(15, 'Must be 15 characters or less')
-                        .required('*Last name is Required'),
+                        .required('*Last name is Required')
+                        .matches(/^[A-Za-z ]{3,15}$/i, 'Only alphabets allowed and 3 to 15 characters.'),
                     email: Yup.string()
                         .required('*Email is required')
                         .email('Invalid email address')
@@ -29,14 +30,14 @@ function Forms() {
                     password: Yup.string()
                         .required('*Password is required')
                         .matches(
-                            /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&-])[A-Za-z\d@$!%*#?&-]{8,}$/,
+                            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/,
                             `Must Contain 8 Characters,
                             One Uppercase, One Lowercase,
                             One Number and one special case Character`
                         ),
                     cpassword: Yup.string()
                         .required('*Confirm Password is required')
-                        .oneOf([Yup.ref('password'), null], 'Passwords must match')
+                        .oneOf([Yup.ref('password'), null], 'Passwords must match'),
 
                 })}
 
@@ -48,7 +49,7 @@ function Forms() {
                 }}
             >
                 {({ isSubmitting }) => (
-                    <Form className='text-start head'>
+                    <Form className='text-start form-card'>
                         <div className='form-group'>
                             <label htmlFor="firstName">First Name: </label>
                             <Field type="text" name="firstName" />
@@ -105,4 +106,4 @@ function Forms() {
     )
 }
 
-export default Forms;
+export default FormikForm;

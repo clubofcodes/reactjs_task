@@ -14,7 +14,8 @@ import EventBind from './Components/EventBinding/EventBind';
 import ParentComponent from './Components/ParentChildRelation/ParentComponent';
 import ConditionApproaches from './Components/ConditionalStatements/ConditionApproaches';
 import CssDemo from './Components/CssComponent/CssDemo';
-import Forms from './Components/Forms/Forms';
+import FormikForm from './Components/Forms/FormikForm';
+import HookForm from './Components/Forms/HookForm';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -77,7 +78,8 @@ function App(props) {
         </div>
 
         <div className='day-8'>
-          <Forms />
+          <FormikForm/>
+          <HookForm/>
         </div>
       </header>
     </div>
