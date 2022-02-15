@@ -40,7 +40,6 @@ function HookForm() {
     console.log("First Name: ", watch("firstName")); //To get any input value.
     return (
         <div>
-            <hr />
             ={'>'} React Form Using Hook Library
             {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
             <form onSubmit={handleSubmit(onSubmit)} className="text-start form-card">
