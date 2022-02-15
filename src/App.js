@@ -13,6 +13,7 @@ import FuncCompProps from './Components/StateProps/FuncCompProps';
 import EventBind from './Components/EventBinding/EventBind';
 import ParentComponent from './Components/ParentChildRelation/ParentComponent';
 import ConditionApproaches from './Components/ConditionalStatements/ConditionApproaches';
+import CssDemo from './Components/CssComponent/CssDemo';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -58,7 +59,7 @@ function App(props) {
         </div>
 
         <div className='day-4'>
-
+          <CssDemo warning={true}/>
         </div>
 
         <div className='day-5'>
