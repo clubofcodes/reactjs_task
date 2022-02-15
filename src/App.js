@@ -14,6 +14,7 @@ import EventBind from './Components/EventBinding/EventBind';
 import ParentComponent from './Components/ParentChildRelation/ParentComponent';
 import ConditionApproaches from './Components/ConditionalStatements/ConditionApproaches';
 import CssDemo from './Components/CssComponent/CssDemo';
+import Forms from './Components/Forms/Forms';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -59,7 +60,7 @@ function App(props) {
         </div>
 
         <div className='day-4'>
-          <CssDemo warning={true}/>
+          <CssDemo warning={true} />
         </div>
 
         <div className='day-5'>
@@ -73,6 +74,10 @@ function App(props) {
           {/* <UserContext.Provider value='SecondWay to Use provider'>
             <Daily />
           </UserContext.Provider> */}
+        </div>
+
+        <div className='day-8'>
+          <Forms />
         </div>
       </header>
     </div>
