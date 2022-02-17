@@ -24,8 +24,24 @@ In the project directory, you can run:
 npm start
 ```
 
+For AJAX and API calls, to fetch data from local json file.
+
+- First go to directory '/src/Assets/files/' using below cmd.
+
+```bash
+cd src/assets/files
+```
+
+- Now, use below cmd & run json server to fetch data from local json file.
+
+```bash
+json-server --watch jsonData.json --port 3001
+```
+
+## FYI
+
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) on default port to view project in your browser.
 
 The page will reload when you make changes and save the code.\
 You may also see any lint errors in the console.

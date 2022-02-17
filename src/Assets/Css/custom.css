@@ -1,0 +1,25 @@
+.topic-heading {
+    margin-bottom: 20px !important;
+}
+
+.innertag-flex {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+}
+
+.rectanglebg {
+    border-radius: 0.25rem;
+    width: 80%;
+    text-align: start;
+    padding: 5px 12px;
+    font-size: 16px;
+    background-color: #fff;
+    border: none;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

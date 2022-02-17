@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './Assets/lessRes.jpg';
+import logo from './Assets/img/lessRes.jpg';
 import './App.css';
 import Todo from './Components/Todo/Todo';
 import Lifecycle from './Components/LifeCycle/Lifecycle';
@@ -16,6 +16,7 @@ import ConditionApproaches from './Components/ConditionalStatements/ConditionApp
 import CssDemo from './Components/CssComponent/CssDemo';
 import FormikForm from './Components/Forms/FormikForm';
 import HookForm from './Components/Forms/HookForm';
+import AjaxClassComp from './Components/RestAPIsHttpMethods/AjaxClassComp';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -78,8 +79,12 @@ function App(props) {
         </div>
 
         <div className='day-8'>
-          <FormikForm/>
-          <HookForm/>
+          <FormikForm />
+          <HookForm />
+        </div>
+
+        <div className='day-9'>
+          <AjaxClassComp />
         </div>
       </header>
     </div>
