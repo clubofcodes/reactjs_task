@@ -1,4 +1,4 @@
-# React.js Inexture Daily Task
+# React.js Daily Topics Demo
 
 ## Getting Started with Create React App
 
@@ -41,7 +41,7 @@ json-server --watch jsonData.json --port 3001
 ## FYI
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) on default port to view project in your browser.
+Open [http://localhost:3000](http://localhost:3000) which is default port to view project in your browser.
 
 The page will reload when you make changes and save the code.\
 You may also see any lint errors in the console.
