@@ -15,18 +15,21 @@ class ClassCompState extends Component {
         //Everytime we have to use setState() method to update it.
         this.setState({ count: this.state.count + 1 }); //Method-1
 
+        //Method-2: if prev value is not known than can be fetch like this.
         // this.setState((prevState) => (
         //     { count: prevState.count + 1 }
-        // )); //Method-2: if prev valu is not know than can be fetch like this.
+        // ));
 
-        console.log(this.state.count); //at present you won't get last value in same func. But last second value.
+        //at present you won't get last updated value in same func. But last second value.
+        console.log('Before Updated Value: ', this.state.count);
 
-        //To get the recent updated value from state using callback function.
+        //Method-3: if want previous and updated both value.
+        //To get the recent updated value from state or to perform any task with current value after the state is updated using callback function.
         // this.setState({
         //     count: this.state.count + 1
         // }, () => console.log('Callback: ', this.state.count));
 
-        //To see the previous state and current updated state together.
+        //To see the previous state and current updated state together using callback.
         this.setState(
             (prevState) => {
                 console.log('Old Count: ', prevState.count);

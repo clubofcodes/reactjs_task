@@ -16,7 +16,7 @@ import ConditionApproaches from './Components/ConditionalStatements/ConditionApp
 import CssDemo from './Components/CssComponent/CssDemo';
 import FormikForm from './Components/Forms/FormikForm';
 import HookForm from './Components/Forms/HookForm';
-import AjaxClassComp from './Components/RestAPIsHttpMethods/AjaxClassComp';
+import AjaxFetchClassComp from './Components/RestAPIsHttpMethods/AjaxFetchClassComp';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -84,7 +84,7 @@ function App(props) {
         </div>
 
         <div className='day-9'>
-          <AjaxClassComp />
+          <AjaxFetchClassComp />
         </div>
       </header>
     </div>
