@@ -23,3 +23,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.btn-lg {
+    padding: 0.5rem 1rem !important;
+    font-size: 1.25rem !important;
+    border-radius: 0.3rem !important;
+    width: 25%;
+}
