@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../Assets/Css/custom.css';
-import CallApiBtn from './ContextCallApiFuncComp';
+import {CallApiBtn} from './ContextCallApiFuncComp';
 
 //Defining context and exporting for sending object with callback() to another component.
 export const UserContext = React.createContext({ callApi: (response) => response })
