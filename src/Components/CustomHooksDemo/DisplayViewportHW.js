@@ -7,7 +7,7 @@ export default function DisplayViewportHW() {
 
     return (
         <div>
-            <p className='topic-heading'>={'>'} Displaying Window HeightWidth using custom Hook in Function Component.</p>
+            <p className='topic-heading'>={'>'} Displaying Window HeightWidth using viewport hook.</p>
             {/* On window resize, height width will be displayed by custom hook. */}
             <h2 className='innertag-flex'><p className='rectanglebg'>Height: {height} {'&'} Width: {width}</p></h2>
             <h2 className='innertag-flex'><p className='rectanglebg'>Inner Height: {innerHeight} {'&'} Inner Width: {innerWidth}</p></h2>

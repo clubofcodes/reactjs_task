@@ -90,7 +90,8 @@ function App(props) {
         </div>
 
         <div className='day-10'>
-          {/* ={'>'} Custom Hooks Demo */}
+          <hr />
+          ={'>'} Custom Hooks Demo in Function Component.
           <FetchApiHook />
           <DisplayViewportHW />
         </div>
