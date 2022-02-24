@@ -21,6 +21,7 @@ import FetchApiHook from './Components/CustomHooksDemo/FetchApiHook';
 import DisplayViewportHW from './Components/CustomHooksDemo/DisplayViewportHW';
 import ShowCurrentLocation from './Components/CustomHooksDemo/ShowCurrentLocation';
 import FormDataStorage from './Components/CustomHooksDemo/FormDataStorage';
+import ArrayOperations from './Components/CustomHooksDemo/ArrayOperations';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -98,6 +99,7 @@ function App(props) {
           <DisplayViewportHW />
           <ShowCurrentLocation />
           <FormDataStorage />
+          <ArrayOperations />
         </div>
       </header>
     </div>
