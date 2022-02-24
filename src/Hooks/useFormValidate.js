@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSessionStorage } from "./useSessionStorage";
 
 export default function useFormValidate() {
 
     //New state for errors handling.
-    const [errors, setErrors] = useState({emailErr:'', passwordErr: ''});
+    const [errors, setErrors] = useState({ emailErr: '', passwordErr: '' });
     //New state to store form multiple input data in to array of objects.
     const [formData, setFormData] = useState([]);
+    //New state to store logedIn user in SessionStorage.
+    const [isSignup, setUserSignup] = useSessionStorage('isSignup', 'FirstTime');
 
     //This function is called when user submit form, stores form data into state and clears inputs.
     const handleSubmit = (e) => {
@@ -14,14 +17,8 @@ export default function useFormValidate() {
         //Mult-Methods: to get user input value.
         // console.log('Method-1:', e.target[0].value, ' Method-2:', e.target.elements.email.value, ' Method-3:', e.target.email.value);
 
-        //storing email and pwd input value into variables/fields in object.
+        //storing email and pwd input value into variables/fields in object. And Trimming any whitespace using trim() function.
         const formValues = { email: e.target.email.value.trim(), password: e.target.password.value.trim() }
-
-        //pulling name & value attributes of input from e.target.
-        // const { name, value } = e.target;
-        // console.log(e.target.value);
-        // console.log(name, ' ', value);
-        // setFormData([...formData, { [name]:value }]);
 
         //Handling Errors on form submission.
         let emailErr = (!formValues.email) ? "Email address is required" :
@@ -36,16 +33,37 @@ export default function useFormValidate() {
 
         //If there is no error store the data in state and reset inputs.
         if (!emailErr && !passwordErr) {
-            //User input value is stored in array of objects of state. And Trimming any whitespace using trim() function.
-            setFormData([...formData, { email: formValues.email, password: formValues.password }]);
+            //New state to fetch data from localStorage.
+            const storedLocalData = JSON.parse(window.localStorage.getItem('Users'));
+
+            //Check whether user has already registered,else store data in state.
+            if (storedLocalData.length > 0) {
+                storedLocalData.map((prevData => {
+                    if (prevData.email === formValues.email) setUserSignup('No'); //store in session storage for already registered.
+                    else {
+                        setUserSignup('Yes'); //store in session storage for signup successfully.
+                        //User input value is stored in array of objects of state.
+                        setFormData([...formData, { email: formValues.email, password: formValues.password }]);
+                    }
+                }));
+            } else {
+                //User input value is stored in array of objects of state.
+                setFormData([...formData, { email: formValues.email, password: formValues.password }]);
+                setUserSignup('Yes');
+            }
             //Clearing inputs by setting value to null.
             e.target.email.value = e.target.password.value = '';
             setErrors({});
         }
     }
 
-    //To hide errors for reset button and when form is successfully validated.
-    const hideErrors = () => setErrors({emailErr:'', passwordErr: ''});
+    //to hide the heading msg is registered or already a user.
+    useEffect(() => {
+        setUserSignup('FirstTime');
+    }, []);
 
-    return { errors, formData, handleSubmit, hideErrors };
+    //To hide errors for reset button.
+    const hideErrors = () => setErrors({ emailErr: '', passwordErr: '' });
+
+    return { formData, handleSubmit, errors, hideErrors, setFormData, isSignup };
 }
