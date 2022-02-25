@@ -12,10 +12,10 @@ class Todo extends React.Component {
 
     render() {
         return (
-            <div style={{ marginBottom: '30px' }}>
+            <div className='mb-0'>
                 <hr />
-                <h3>TODO ~ TASK</h3>
-                <form onSubmit={this.handleSubmit}>
+                <p className='topic-heading'> ={'>'} TODO ~ Add Task (Class Component Demo)</p>
+                <form className='innertag-flex' onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="new-todo">
                             What needs to be done?
@@ -61,22 +61,21 @@ class Todo extends React.Component {
     }
 }
 
-class TodoList extends React.Component {
+function TodoList(props) {
 
-    removeTask = (task) => this.props.rmtask(task.id);
+    const removeTask = (task) => props.rmtask(task.id);
 
-    render() {
-        return (
-            <ul>
-                {this.props.todo_tasks.map(task => (
-                    <li key={task.id}>
-                        {task.text} { }
-                        <button onClick={this.removeTask.bind(this, task)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
-        );
-    }
+    return (
+        <ul style={{ listStyle: 'none', marginBottom: '0' }}>
+            <br />
+            <p className='topic-heading mb-2'> ={'>'} Task List (Function Component Demo)</p>
+            {props.todo_tasks.map(task => (
+                <li key={task.id} className="innertag-flex mb-0">
+                    <p className='mb-2'>{task.text} <button type='button' className='btn btn-danger btn-sm' onClick={() => removeTask(task)}>Delete</button></p>
+                </li>
+            ))}
+        </ul>
+    );
 }
 
 export default Todo;
