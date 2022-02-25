@@ -19,7 +19,7 @@ export default function useClipboard() {
     }
 
     //Actual method to copy to clipoard on Copy button click event.
-    const copyToClipboard = () => {
+    const copyToClipboard = async () => {
         //if empty then shows alert.
         if (!copyText) alert('Please enter something to copy!!');
         else {
@@ -27,14 +27,18 @@ export default function useClipboard() {
             // copy(copyText); //copies value to clipboard.
 
             //Method - 2: Using copy execCommand method.
-            var copyTextInputValue = document.getElementById('copyTextInput')
-            copyTextInputValue.select();
-            document.execCommand('copy');
+            // var copyTextInputValue = document.getElementById('copyTextInput')
+            // copyTextInputValue.select();
+            // document.execCommand('copy');
+
+            // Method - 3: Using navigator object and Clipboard Api.
+            // navigator.clipboard.writeText(copyText);
+            ('clipboard' in navigator) ? await navigator.clipboard.writeText(copyText) : document.execCommand('copy', true, copyText);
 
             setCopyBtnValue('Copied'); //Change copy button value to copied.
             setCopyText(''); //Clear the input after successfully copied to clipboard.
         }
     }
 
-    return { copyText, copyBtnValue, handleCopyText, copyToClipboard }
+    return { copyText, copyBtnValue, handleCopyText, copyToClipboard };
 }
