@@ -1,19 +1,77 @@
 .topic-heading {
-    margin-bottom: 20px !important;
+    margin-bottom: 12px !important;
+}
+
+/* Global margin left and right styling */
+.ml-2 {
+    margin-left: 15px !important;
+}
+
+.mr-2 {
+    margin-right: 15px !important;
+}
+
+/* Global padding left and right styling */
+.pl-2 {
+    padding-left: 2rem !important;
+}
+
+.pr-2 {
+    padding-right: 2rem !important;
+}
+
+.error-tag {
+    color: tomato !important;
+    font-size: 12px !important;
 }
 
 .innertag-flex {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: space-between;
+    margin: 2px 0 !important;
+}
+
+.div-flex {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     justify-content: center;
-    margin: 0 !important;
+}
+
+.div-flex input {
+    vertical-align: middle;
+    margin: 10px 0 !important;
+    padding: 0.5rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+    appearance: none;
+    background-color: #fff;
+    border: none;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.div-flex button {
+    padding: 0.45rem 1rem !important;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    outline: none !important;
+}
+
+input:focus {
+    color: #212529 !important;
+    background-color: #fff !important;
+    border-color: #86b7fe !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
 }
 
 .rectanglebg {
     border-radius: 0.25rem;
-    width: 80%;
-    text-align: start;
+    width: 50% !important;
+    text-align: center;
     padding: 5px 12px;
     font-size: 16px;
     background-color: #fff;
@@ -28,9 +86,49 @@
     padding: 0.5rem 1rem !important;
     font-size: 1rem !important;
     border-radius: 0.3rem !important;
-    width: 25%;
 }
 
-.day-10{
-    width: 40%;
+/* For Delete Animation */
+.removed-item {
+    animation: removed-item-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    /*transform origin is moved to the bottom left corner*/
+    transform-origin: 0% 100%;
+}
+
+@keyframes removed-item-animation {
+    0% {
+        opacity: 1;
+        transform: rotateZ(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(600px) rotateZ(90deg);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .rectanglebg {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .div-flex input {
+        margin: 4px 0 !important;
+    }
+}
+
+@media only screen and (max-width: 421px) {
+    .react-components {
+        font-size: small !important;
+    }
+
+    .div-flex input, .div-flex button {
+        font-size: xx-small !important;
+    }
+
+    .div-flex button {
+        padding: 0.44rem 1rem !important;
+    }
 }

@@ -9,7 +9,7 @@ class Lifecycle extends Component {
         this.state = {
             name: 'Rahul Jagetia',
         }
-        console.log('Lifecycle\'s Constructor!!');
+        console.log('---------Lifecycle\'s Starting with Constructor---------');
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -19,6 +19,7 @@ class Lifecycle extends Component {
 
     componentDidMount() {
         console.log('Lifecycle\'s componentDidMount!!');
+        console.log('\n');
     }
 
     shouldComponentUpdate() {
@@ -41,6 +42,7 @@ class Lifecycle extends Component {
 
     changeState = () =>{
         this.setState({name: 'RJ'});
+        console.log('------------Lifecycle\'s after updating variable name in state------------');
     }
 
     render() {
@@ -48,8 +50,8 @@ class Lifecycle extends Component {
         return (
             <div>
                 <hr />
-                <p>Lifecycle ~ To see logs of other Lifecycle methods click below button.</p>
-                <button onClick={this.changeState}>Change State</button>
+                <p className='topic-heading'>={'>'} Lifecycle ~ To see logs of other Lifecycle methods click below button.</p>
+                <button className='mb-2' onClick={this.changeState}>Change State</button>
             </div>
         )
     }

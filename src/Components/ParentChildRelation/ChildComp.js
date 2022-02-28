@@ -4,7 +4,7 @@ class ChildComp extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.props.greetHandler.bind(this, 'Child')}>Greeting Alert</button>
+                <button onClick={this.props.greetHandler.bind(this, 'Child')}>Greeting Alert Button In Child</button>
             </div>
         )
     }

@@ -7,11 +7,11 @@ export default function FormikForm() {
     return (
         <div>
             <hr />
-            ={'>'} React Form Using Formik Library
+            <p className='topic-heading'>={'>'} React Form Using Formik Library</p>
             <Formik
                 initialValues={{ firstName: '', lastName: '', email: '', password: '', cpassword: '' }}
 
-                validationSchema = {validationSchema}
+                validationSchema={validationSchema}
 
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
@@ -26,39 +26,35 @@ export default function FormikForm() {
                             <label htmlFor="firstName">First Name: </label>
                             <Field type="text" name="firstName" />
                         </div>
-                        <div className='col-md-6 offset-md-5'><ErrorMessage name="firstName" component="div" /></div>
+                        <div className='offset-5 col-sm-7'><ErrorMessage name="firstName" /></div>
 
                         <div className='form-group'>
                             <label htmlFor="lastName">Last Name: </label>
                             <Field type="text" name="lastName" />
                         </div>
-                        <div className='col-md-6 offset-md-5'><ErrorMessage name="lastName" component="div" /></div>
+                        <div className='offset-5 col-sm-7'><ErrorMessage name="lastName" /></div>
 
                         <div className='form-group'>
                             <label htmlFor="email">Email: </label>
                             <Field type="text" name="email" />
                         </div>
-                        <div className='col-md-6 offset-md-5'><ErrorMessage name="email" component="div" /></div>
+                        <div className='offset-5 col-sm-7'><ErrorMessage name="email" /></div>
 
                         <div className='form-group'>
                             <label htmlFor="password">Password: </label>
                             <Field type="password" name="password" />
                         </div>
-                        <div className='col-md-6 offset-md-5'><ErrorMessage className='pwd-err' name="password" component="div" /></div>
+                        <div className='offset-5 col-sm-7 pwd-err'><ErrorMessage name="password" /></div>
 
                         <div className='form-group'>
                             <label htmlFor="confrimPassword">Confirm Password: </label>
                             <Field type="password" name="cpassword" />
                         </div>
-                        <div className='col-md-6 offset-md-5'><ErrorMessage className='pwd-err' name="cpassword" component="div" /></div>
+                        <div className='offset-5 col-sm-7 mb-3'><ErrorMessage className='pwd-err' name="cpassword" /></div>
 
                         <div className='form-btn-group'>
-                            <button className='btn round btn-info btn-md' type="submit" disabled={isSubmitting}>
-                                Submit
-                            </button>
-                            <button className='btn round btn-danger btn-md' type="reset">
-                                Reset
-                            </button>
+                            <button className='btn round btn-info shadow-none' type="submit" disabled={isSubmitting}>Submit</button>
+                            <button className='btn round btn-danger shadow-none' type="reset">Reset</button>
                         </div>
                     </Form>
                 )}

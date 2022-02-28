@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import UserContext, { UserConsumer } from '../../Utils/userContext'
 
-class Daily extends Component {
+class ContextAPI extends Component {
   static contextType = UserContext; //Method - 2: FirstWay.
 
   render() {
@@ -12,7 +12,7 @@ class Daily extends Component {
         <UserConsumer>
           {
             (Username) => {
-              return <div>Hello ={'>'} {Username}</div>
+              return <div>User Consumer Callback value, Hello ={'>'} {Username}</div>
             }
           }
         </UserConsumer>
@@ -25,13 +25,13 @@ class Daily extends Component {
         </UserContext.Consumer> */}
 
         {/* Method - 2: Only for single context and in class component. */}
-        Daily Component context from App.js ={'>'} {this.context}
+        ContextAPI context from App.js Component ={'>'} {this.context}
       </div>
     )
   }
 }
 
 //Method - 2: SecondWay to Use context. syntax=> <CompName.contextType = ContextName>;
-Daily.contextType = UserContext;
+// ContextAPI.contextType = UserContext;
 
-export default Daily;
+export default ContextAPI;

@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 //So, it always re-renders wether there is difference or not.
 class RegComp extends Component {
   render() {
-    console.log('Regular Component');
+    console.log('Regular Component Called');
     return (
       <div>Regular Component {this.props.name}</div>
     )

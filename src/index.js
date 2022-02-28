@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// Importing the Bootstrap CSS
+// Importing the Bootstrap CSS classes.
 import 'bootstrap/dist/css/bootstrap.min.css';
+// Importing jquery and popper properties.
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const full_name = { fname: "Rahul", lname: "Jagetia" };
 

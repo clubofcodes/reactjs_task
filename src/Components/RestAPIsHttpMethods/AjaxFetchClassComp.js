@@ -52,7 +52,7 @@ export default class AjaxFetchClassComp extends Component {
             //Another component onClick event: if condition to display loading at first.
             (this.state.isErrWaiting) ? <div><hr /><p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>Loading...</div> :
                 //Shows error thrown by first/second api with countdown from 5 to 1sec and then calls second api.
-                (this.state.error !== '') ? <div><hr /><p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>{this.state.students[0]} APIs Error: {this.state.error.message} (wait for {this.state.resWaitTime}sec to fetch data)</div> :
+                (this.state.error !== '') ? <div><hr /><p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>{this.state.students[0]} APIs Error: <p className='error-tag mt-1'>{this.state.error.message}</p> (wait for {this.state.resWaitTime}sec to fetch data)</div> :
                     <div>
                         <hr />
                         <p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>
@@ -60,8 +60,8 @@ export default class AjaxFetchClassComp extends Component {
                         {(!this.state.isLoaded && <UserContext.Provider value={{ name: 'RJ', callApi: this.showApiError }}> <CallApiBtn /> </UserContext.Provider>)}
                         {/* Displays second api countdown from 5 to 1sec when first api countdown is over and reached to zero. */}
                         {(this.state.isLoaded && this.state.dataLoadTime !== 0) && <div>Second APIs Data Loading...({this.state.dataLoadTime}sec)</div>}
-                        {/* Displays the data into DOM using map once second api countdown reached to zero. */}
-                        {(this.state.dataLoadTime === 0) && this.state.students.map(student => (<h2 className='innertag-flex' key={student.email}><p className='rectanglebg'>Name: {student.name} {'&'} Email: {student.email}</p></h2>))}
+                        {/* Displays the data into DOM using map once second api countdown reaches to zero. */}
+                        {(this.state.dataLoadTime === 0) && this.state.students.map(student => (<div className='div-flex' key={student.email}><p className='rectanglebg'>Name: {student.name} {'&'} Email: {student.email}</p></div>))}
                     </div>
         )
     }

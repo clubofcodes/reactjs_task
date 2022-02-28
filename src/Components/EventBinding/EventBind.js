@@ -20,10 +20,12 @@ class EventBind extends Component {
             <div>
                 ={'>'} Event Binding In Class Component (See Logs)
                 <p>Message: {this.state.msg}</p>
-                <button onClick={() => this.clickHandler1()}>Method - 1</button>
-                <button onClick={this.clickHandler1.bind(this)}>Method - 2</button>
+                <button onClick={() => this.clickHandler1()}>Method - 1: (() ={'>'} this.clickHandler1())</button>
+                <button onClick={this.clickHandler1.bind(this)}>Method - 2: (this.clickHandler1.bind(this))</button>
+                <p>Assigned in constructor and called using ={'>'} (this.clickHandler= this.clickHandler2.bind(this);)</p>
                 <button onClick={this.clickHandler}>Method - 3</button>
-                <button onClick={this.clickHandler2}>Method - 4</button>
+                <p>Defined Arrow function and called using ={'>'} (this.clickHandler2)</p>
+                <button onClick={this.clickHandler2}>Method - 4: (this.clickHandler2)</button>
             </div>
         )
     }

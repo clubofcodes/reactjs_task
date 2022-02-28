@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './Assets/img/lessRes.jpg';
+import './Assets/Css/custom.css';
 import './App.css';
 import Todo from './Components/Todo/Todo';
 import Lifecycle from './Components/LifeCycle/Lifecycle';
@@ -36,7 +37,7 @@ function App(props) {
               <img src={logo} className="App-logo" alt="logo" />
             </div>
             <div className='App-flip-box-back'>
-              <div style={{ padding: '50px 0' }}>
+              <div>
                 {/* use the 'owner_name' attribute assigned in index.js. */}
                 Hello, {props.owner_name.fname} {props.owner_name.lname}
                 <p>Welcome to React World!</p>
@@ -45,7 +46,8 @@ function App(props) {
           </div>
         </div>
         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer"> Learn React </a>
-
+      </header>
+      <div className='react-components'>
         <div className='day-1'>
           <Todo />
         </div>
@@ -56,12 +58,12 @@ function App(props) {
         </div>
 
         <div className='day-3'>
-          <ClassCompState />
-          <FuncCompState />
           <ClassCompProps shortName="RJ" fullName="Rahul Jagetia" />
           <FuncCompProps shortName="RJ" fullName="Rahul Jagetia">
-            <p>This is children props.</p>
+            <p>This is children props of P-Tag.</p>
           </FuncCompProps>
+          <ClassCompState />
+          <FuncCompState />
           <EventBind />
           <ParentComponent />
           <ConditionApproaches />
@@ -95,7 +97,7 @@ function App(props) {
 
         <div className='day-10'>
           <hr />
-          ={'>'} Custom Hooks Demo in Function Component.
+          <p className='topic-heading'>={'>'} Custom Hooks Demo in Function Component using De-Structuring method.</p>
           <FetchApiHook />
           <DisplayViewportHW />
           <ShowCurrentLocation />
@@ -103,7 +105,7 @@ function App(props) {
           <ArrayOperations />
           <CopyToClipboard />
         </div>
-      </header>
+      </div>
     </div>
   );
 }

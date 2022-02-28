@@ -31,7 +31,7 @@ function FuncCompState() {
             <br />
             ={'>'} State Method In Functional Component (See Logs)
             <p>Counter: {count}</p>
-            ={'>'} Update's the X once above counter is updated.
+            Update's the X var once above counter is updated by return in useEffect.
             <p>X(Wait 1 sec to update): {x}</p>
             <button onClick={increment}>Count</button>
         </div>

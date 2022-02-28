@@ -21,10 +21,10 @@ export default function useFormValidate() {
         const formValues = { email: e.target.email.value.trim(), password: e.target.password.value.trim() }
 
         //Handling Errors on form submission.
-        let emailErr = (!formValues.email) ? "Email address is required" :
+        let emailErr = (!formValues.email) ? "*Email address is required" :
             (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*(\.\w{2,64})+$/.test(formValues.email))) &&
             "Invalid email address";
-        let passwordErr = (!formValues.password) ? "Password is required" :
+        let passwordErr = (!formValues.password) ? "*Password is required" :
             (!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/.test(formValues.password))) &&
             `Must Contain 8 Characters,One Uppercase, One Lowercase,One Number and one special case Character`;
 

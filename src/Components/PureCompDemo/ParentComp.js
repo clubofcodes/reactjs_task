@@ -10,9 +10,10 @@ class ParentComp extends Component {
 
     componentDidMount() {
         setTimeout(() => {
-            this.setState({name:'Rahul Jagetia'}); 
+            this.setState({ name: 'Rahul Jagetia'});
             //if same name as initial_state than only Regular component will re-render & vice-versa.;
             //pure component will not re-render for same value.
+            console.log('Called after 2sec, pure component will not re-render for same value.');
         }, 2000);
     }
 
@@ -20,6 +21,7 @@ class ParentComp extends Component {
         console.log('----------Parent Component----------');
         return (
             <div>
+                <p className='topic-heading'>={'>'} Pure Component Vs Regular Component</p>
                 <RegComp name={this.state.name} />
                 <PureComp name={this.state.name} />
             </div>
