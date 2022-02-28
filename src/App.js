@@ -19,7 +19,7 @@ import FormikForm from './Components/Forms/FormikForm';
 import HookForm from './Components/Forms/HookForm';
 import AjaxFetchClassComp from './Components/RestAPIsHttpMethods/AjaxFetchClassComp';
 import FetchApiHook from './Components/CustomHooksDemo/FetchApiHook';
-import DisplayViewportHW from './Components/CustomHooksDemo/DisplayViewportHW';
+import DisplaySystemInfo from './Components/CustomHooksDemo/DisplaySystemInfo';
 import ShowCurrentLocation from './Components/CustomHooksDemo/ShowCurrentLocation';
 import FormDataStorage from './Components/CustomHooksDemo/FormDataStorage';
 import ArrayOperations from './Components/CustomHooksDemo/ArrayOperations';
@@ -99,7 +99,7 @@ function App(props) {
           <hr />
           <p className='topic-heading'>={'>'} Custom Hooks Demo in Function Component using De-Structuring method.</p>
           <FetchApiHook />
-          <DisplayViewportHW />
+          <DisplaySystemInfo />
           <ShowCurrentLocation />
           <FormDataStorage />
           <ArrayOperations />
