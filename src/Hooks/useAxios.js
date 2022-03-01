@@ -6,7 +6,7 @@ import axios from 'axios';
  * @param {Api url for fetching data} userApiUrl 
  * @returns objects of data, error and loadingState variable.
  */
-export default function useFetchApi(userApiUrl) {
+export default function useAxios(userApiUrl) {
     //Declaring the variables to store data or error, when api call is done.
     const [fetchData, setFetchData] = useState(null);
     const [loadingData, setLoadingData] = useState(false);
@@ -17,8 +17,15 @@ export default function useFetchApi(userApiUrl) {
     useEffect(() => {
         setLoadingData(true);
         //axios library to fetched data from api calls.
-        axios.get(userApiUrl).then((response) => {console.log(response); setFetchData(response.data); setError(null)}).catch((err) => setError(err)).finally(() => setLoadingData(false));
+        axios.get(userApiUrl)
+            .then((response) => {
+                console.log(response);
+                setFetchData(response.data.studData);
+                setError(null);
+            })
+            .catch((err) => setError(err))
+            .finally(() => setLoadingData(false));
     }, [userApiUrl]);
 
-    return {fetchData, loadingData, error};
+    return { fetchData, loadingData, error };
 }

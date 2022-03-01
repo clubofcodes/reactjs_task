@@ -1,9 +1,9 @@
-import useFetchApi from '../../Hooks/useFetchApi';
+import useAxios from '../../Hooks/useAxios';
 
 export default function FetchApiHook() {
 
     //using custom hook and it's variables for fetching data from api call.
-    const { fetchData, loadingData, error } = useFetchApi('http://localhost:3001/studData');
+    const { fetchData, loadingData, error } = useAxios('./jsonData.json');
 
     return (
         <div>
