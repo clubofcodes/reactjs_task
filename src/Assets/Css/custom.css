@@ -70,7 +70,7 @@ input:focus {
 
 .rectanglebg {
     border-radius: 0.25rem;
-    width: 50% !important;
+    width: 55% !important;
     text-align: center;
     padding: 5px 12px;
     font-size: 16px;
@@ -109,6 +109,8 @@ input:focus {
 
 @media only screen and (max-width: 768px) {
     .rectanglebg {
+        text-overflow: unset !important;
+        overflow: scroll !important;
         width: 80% !important;
     }
 }
@@ -116,6 +118,11 @@ input:focus {
 @media only screen and (max-width: 576px) {
     .div-flex input {
         margin: 4px 0 !important;
+    }
+
+    .rectanglebg {
+        width: 100% !important;
+        font-size: small !important;
     }
 }
 

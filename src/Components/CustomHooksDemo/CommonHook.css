@@ -13,4 +13,12 @@
     .innertagHook-flex {
         padding: 10px !important;
     }
+
+    .urlInput {
+        width: 100% !important;
+    }
+
+    .card-body h5{
+        font-size: smaller;
+    }
 }

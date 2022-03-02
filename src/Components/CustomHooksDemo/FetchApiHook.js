@@ -11,11 +11,11 @@ export default function FetchApiHook() {
     const getUrlOnchange = (e) => e.target.value ? setApiUrl(e.target.value) : setApiUrl('./jsonData.json')
 
     return (
-        <div>
-            <p className='topic-heading'>={'>'} API calls using axios <font style={{ color: 'yellow' }}>(Default data is from local json file)</font></p>
+        <div className='mb-3'>
+            <p className='topic-heading mb-1'>={'>'} API calls using axios <span className='text-warning'>(Default data is from local json file)</span></p>
             <div className='innertagHook-flex mb-2'>
-                {urlList.map((urlObj) => <div className='div-flex'><pre className='rectanglebg'>{urlObj.url}</pre></div>)}
-                <input type="text" name="apiUrl" placeholder='Enter api url to fetch data . . .' onChange={(e) => getUrlOnchange(e)} size='50' />
+                <p className='mb-1 text-info'>List of Fake Api Url</p>{urlList.map((urlObj) => <div className='div-flex'><pre className='rectanglebg'>{urlObj.url}</pre></div>)}
+                <input type="text" className='urlInput' name="apiUrl" placeholder='Enter api url to fetch data . . .' onChange={(e) => getUrlOnchange(e)} size='50' />
             </div>
             <button className='btn btn-primary btn-lg' onClick={getData}>Get Data</button>
             <button className='btn btn-primary btn-lg ml-2' onClick={() => setFetchData(null)}>Reset Data</button>
