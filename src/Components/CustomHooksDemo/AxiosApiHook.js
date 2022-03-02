@@ -3,7 +3,7 @@ import useAxios from '../../Hooks/useAxios';
 import './CommonHook.css';
 import urlList from '../../Assets/files/apiUrl.json';
 
-export default function FetchApiHook() {
+export default function AxiosApiHook() {
     const [apiUrl, setApiUrl] = useState('./jsonData.json');
     //using custom hook and it's variables for fetching data from api call.
     const { fetchData, setFetchData, loadingData, error, getData } = useAxios(apiUrl);
@@ -41,10 +41,10 @@ export default function FetchApiHook() {
                                     </div>
                                     <div className="card mt-3">
                                         <div className="card-header">
-                                            Data (Default data limit is 2 for all array data urls)
+                                            Data (Default display data limit is 2 for all urls)
                                         </div>
                                         <div className="card-body">
-                                            <pre>{Array.isArray(fetchData.data) ? JSON.stringify(fetchData.data.slice(0, 2), null, 2) : JSON.stringify(fetchData.data, null, 2)}</pre>
+                                            <pre>{Array.isArray(fetchData.data) ? JSON.stringify(fetchData.data.slice(0, 2), null, 2) : JSON.stringify(Object.keys(fetchData.data).slice(0,2).reduce((total,key)=>{total[key] = fetchData.data[key]; return total;},{}), null, 2)}</pre>
                                         </div>
                                     </div>
                                     <div className="card mt-3">

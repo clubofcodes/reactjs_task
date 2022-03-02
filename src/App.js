@@ -18,7 +18,7 @@ import CssDemo from './Components/CssComponent/CssDemo';
 import FormikForm from './Components/Forms/FormikForm';
 import HookForm from './Components/Forms/HookForm';
 import AjaxFetchClassComp from './Components/RestAPIsHttpMethods/AjaxFetchClassComp';
-import FetchApiHook from './Components/CustomHooksDemo/FetchApiHook';
+import AxiosApiHook from './Components/CustomHooksDemo/AxiosApiHook';
 import DisplaySystemInfo from './Components/CustomHooksDemo/DisplaySystemInfo';
 import ShowCurrentLocation from './Components/CustomHooksDemo/ShowCurrentLocation';
 import FormDataStorage from './Components/CustomHooksDemo/FormDataStorage';
@@ -98,7 +98,7 @@ function App(props) {
         <div className='day-10'>
           <hr />
           <p className='topic-heading'>={'>'} Custom Hooks Demo in Function Component using De-Structuring method.</p>
-          <FetchApiHook />
+          <AxiosApiHook />
           <DisplaySystemInfo />
           <ShowCurrentLocation />
           <FormDataStorage />
