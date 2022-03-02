@@ -14,9 +14,26 @@ export default function useAxios(userApiUrl) {
 
     //axios library to fetched data from api calls.
     const getData = () => {
-        setLoadingData(true); //To start loading div.
+        setLoadingData(true); //To start loading msg.
+
         //Method - 1: Axios get method.
-        axios.get(userApiUrl)
+        // axios({
+        //     method: 'get',
+        //     url: userApiUrl,
+        //     params: {
+        //         _limit: 5
+        //     }
+        // })
+        // .then((response) => {
+        //     console.log(response);
+        //     setFetchData(response);
+        //     setError(null);
+        // })
+        // .catch((err) => setError(err))
+        // .finally(() => setLoadingData(false));
+
+        //Method - 2: Axios get method.
+        axios.get(userApiUrl.trim(), { params: { _limit: 2 } }) //axios.get(userApiUrl + '?_limit=2') is another way.
             .then((response) => {
                 console.log(response); //logs response returned by get method.
                 setFetchData(response); //stores response in fetchData state.
@@ -26,5 +43,5 @@ export default function useAxios(userApiUrl) {
             .finally(() => setLoadingData(false)); //will set state to false after every call of getData to stop loading.
     }
 
-    return { fetchData, loadingData, error, getData };
+    return { fetchData, setFetchData, loadingData, error, getData };
 }

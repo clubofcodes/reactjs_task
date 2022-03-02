@@ -1,60 +1,58 @@
-{
-    "studData": [
-        {
-            "name": "Jagetia Rahul",
-            "image": "https://www.encodedna.com/images/theme/angularjs.png",
-            "email": "rjagetiya780@rku.ac.in",
-            "mobile": "8347383659",
-            "branch": "Information Technology",
-            "location": "India, IN"
-        },
-        {
-            "name": "Pranav Kakadiya",
-            "image": "https://www.encodedna.com/images/theme/angularjs.png",
-            "email": "pkakadiya274@rku.ac.in",
-            "mobile": "6352331106",
-            "branch": "Information Technology",
-            "location": "India, IN"
-        },
-        {
-            "name": "Dharmil Dhameliya",
-            "image": "https://www.encodedna.com/images/theme/angularjs.png",
-            "email": "ddhameliya76@rku.ac.in",
-            "mobile": "9898989898",
-            "branch": "Computer Engineering",
-            "location": "India, IN"
-        },
-        {
-            "name": "Nikhil Nakrani",
-            "image": "https://www.encodedna.com/images/theme/angularjs.png",
-            "email": "nnakarani@rku.ac.in",
-            "mobile": "9889889898",
-            "branch": "Information Technology",
-            "location": "India, IN"
-        },
-        {
-            "name": "Amit Nanda",
-            "image": "https://www.encodedna.com/images/theme/angularjs.png",
-            "email": "ananda786@rku.ac.in",
-            "mobile": "9293443739",
-            "branch": "Computer Engineering",
-            "location": "India, IN"
-        },
-        {
-            "name": "Antala Hemal",
-            "image": "https://www.encodedna.com/images/theme/angularjs.png",
-            "email": "hantala783@rku.ac.in",
-            "mobile": "9999898987",
-            "branch": "Information Technology",
-            "location": "India, IN"
-        },
-        {
-            "name": "Deepak Shukla",
-            "image": "https://www.encodedna.com/images/theme/angularjs.png",
-            "email": "dshukla293@rku.ac.in",
-            "mobile": "9999121299",
-            "branch": "Computer Engineering",
-            "location": "India, IN"
-        }
-    ]
-}
+[
+    {
+        "name": "Jagetia Rahul",
+        "image": "https://www.encodedna.com/images/theme/angularjs.png",
+        "email": "rjagetiya780@rku.ac.in",
+        "mobile": "8347383659",
+        "branch": "Information Technology",
+        "location": "India, IN"
+    },
+    {
+        "name": "Pranav Kakadiya",
+        "image": "https://www.encodedna.com/images/theme/angularjs.png",
+        "email": "pkakadiya274@rku.ac.in",
+        "mobile": "6352331106",
+        "branch": "Information Technology",
+        "location": "India, IN"
+    },
+    {
+        "name": "Dharmil Dhameliya",
+        "image": "https://www.encodedna.com/images/theme/angularjs.png",
+        "email": "ddhameliya76@rku.ac.in",
+        "mobile": "9898989898",
+        "branch": "Computer Engineering",
+        "location": "India, IN"
+    },
+    {
+        "name": "Nikhil Nakrani",
+        "image": "https://www.encodedna.com/images/theme/angularjs.png",
+        "email": "nnakarani@rku.ac.in",
+        "mobile": "9889889898",
+        "branch": "Information Technology",
+        "location": "India, IN"
+    },
+    {
+        "name": "Amit Nanda",
+        "image": "https://www.encodedna.com/images/theme/angularjs.png",
+        "email": "ananda786@rku.ac.in",
+        "mobile": "9293443739",
+        "branch": "Computer Engineering",
+        "location": "India, IN"
+    },
+    {
+        "name": "Antala Hemal",
+        "image": "https://www.encodedna.com/images/theme/angularjs.png",
+        "email": "hantala783@rku.ac.in",
+        "mobile": "9999898987",
+        "branch": "Information Technology",
+        "location": "India, IN"
+    },
+    {
+        "name": "Deepak Shukla",
+        "image": "https://www.encodedna.com/images/theme/angularjs.png",
+        "email": "dshukla293@rku.ac.in",
+        "mobile": "9999121299",
+        "branch": "Computer Engineering",
+        "location": "India, IN"
+    }
+]
