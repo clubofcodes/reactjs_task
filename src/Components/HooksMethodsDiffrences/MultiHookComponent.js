@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react";
 import CallbackHook from "./CallbackHook";
 import MemoComponent from "./MemoComponent";
+import WithoutCallbackMemoComp from "./WithoutCallbackMemoComp";
+import './HooksMethods.css';
 
 export default function MultiHookComponent() {
 
@@ -16,21 +18,28 @@ export default function MultiHookComponent() {
   //each time in memory and props changes, so even memo component will re-render.
   const randomNum = (number) => setCallBackValue(number);
 
+  console.log('-----------Main Component Rendered-----------');
   return (
     <div>
       <hr />
       <p>={'>'} Multiple Hooks Diffrences</p>
-      <p>Main Increment Value: {mainValue}</p>
+      <p className="mb-1">MainComp Increment Value: {mainValue}</p>
       {/* Increments the mainValue state, first memoComp is re-render as randomNum func refrence changes
-      which is passed as props in MemoComponent.
+      each time, which is passed as props in MemoComponent.
       But in second memoComp I passed func using callback hook then only CallbackHook comp is re-rendered. */}
-      <button className="mb-3" onClick={() => setMainValue(mainValue + 1)}>Click to increment</button>
+      <button className="mb-1" onClick={() => setMainValue(mainValue + 1)}>Click to increment</button>
+      <div className="div-flex mb-3">
+        <strong className="rectanglebg text-danger text-wrap">Note: Only Main component value is updated in state. So memo child component will not re-render as props doesn't change. Initialy memo memorize's the value only not function.</strong>
+      </div>
 
       {/* Will re-render whenever this(MultiHookComponent) is rendered as eachtime func refrence is new.*/}
-      <MemoComponent randomNumFunc={randomNum} newNum={callBackValue} /> {/* Will not be re-render until callBackValue(props) is not changed */}
-      {/* Will no re-render whenever this(MultiHookComponent) is rendered as eachtime func refrence will be same with help of useCallback().*/}
+      <WithoutCallbackMemoComp randomNumFunc={randomNum} newNum={callBackValue} /> {/*Will not be re-render until callBackValue(props) is not changed*/}
+
+      {/* Will not re-render whenever this(MultiHookComponent) is rendered as eachtime func refrence will be same with help of useCallback().*/}
       <MemoComponent randomNumFunc={memorizeRandomNum} newNum={callBackValue} /> {/* Will not be re-render until callBackValue(props) is not changed */}
-      <CallbackHook randomNumFunc={memorizeRandomNum} newNum={callBackValue} /> {/* Displays Random Num */}
+
+      {/* Without memo CallbackHook will re-render whenever this main component will re-render. */}
+      {/* <CallbackHook randomNumFunc={memorizeRandomNum} newNum={callBackValue} /> Displays Random Num */}
     </div>
   )
 }
