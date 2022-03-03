@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react";
-import CallbackHook from "./CallbackHook";
 import MemoComponent from "./MemoComponent";
 import WithoutCallbackMemoComp from "./WithoutCallbackMemoComp";
 import './HooksMethods.css';
@@ -37,9 +36,6 @@ export default function MultiHookComponent() {
 
       {/* Will not re-render whenever this(MultiHookComponent) is rendered as eachtime func refrence will be same with help of useCallback().*/}
       <MemoComponent randomNumFunc={memorizeRandomNum} newNum={callBackValue} /> {/* Will not be re-render until callBackValue(props) is not changed */}
-
-      {/* Without memo CallbackHook will re-render whenever this main component will re-render. */}
-      {/* <CallbackHook randomNumFunc={memorizeRandomNum} newNum={callBackValue} /> Displays Random Num */}
     </div>
   )
 }

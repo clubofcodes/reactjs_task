@@ -4,7 +4,7 @@ import './Assets/Css/custom.css';
 import './App.css';
 import Todo from './Components/Todo/Todo';
 import Lifecycle from './Components/LifeCycle/Lifecycle';
-import Daily from './Components/Daily/Daily';
+import ContextAPI from './Components/ContextAPIDemo/ContextAPI';
 import { UserProvider } from './Utils/userContext';
 import ParentComp from './Components/PureCompDemo/ParentComp';
 import ClassCompState from './Components/StateProps/ClassCompState';
@@ -80,10 +80,10 @@ function App(props) {
 
         <div className='day-6'>
           <UserProvider value='RJ'>
-            <Daily />
+            <ContextAPI />
           </UserProvider>
           {/* <UserContext.Provider value='SecondWay to Use provider'>
-            <Daily />
+            <ContextAPI />
           </UserContext.Provider> */}
         </div>
 
