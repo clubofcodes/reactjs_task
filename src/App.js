@@ -25,6 +25,8 @@ import FormDataStorage from './Components/CustomHooksDemo/FormDataStorage';
 import ArrayOperations from './Components/CustomHooksDemo/ArrayOperations';
 import CopyToClipboard from './Components/CustomHooksDemo/CopyToClipboard';
 import MultiHookComponent from './Components/HooksMethodsDiffrences/MultiHookComponent';
+import EnhancedLikes from './Components/HOCDemo/EnhancedLikes';
+import EnhancedComments from './Components/HOCDemo/EnhancedComments';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -75,7 +77,9 @@ function App(props) {
         </div>
 
         <div className='day-5'>
-          <MultiHookComponent/>
+          <MultiHookComponent />
+          <EnhancedLikes />
+          <EnhancedComments />
         </div>
 
         <div className='day-6'>
