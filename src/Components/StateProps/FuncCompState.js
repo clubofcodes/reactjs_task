@@ -21,7 +21,7 @@ function FuncCompState() {
         console.log('Count in useEffect: ', count);
         console.log('x in useEffect: ', x);
         return setTimeout(() => {setX(x+1)}, 1000);
-    }, [count]);
+    }, []);
     //[] => is dependency list, without that it will be rendered/called everytime.
     //[] => with empty list, it will be called only once can check it by keeping empty.
     //[count] => after giving var to it, it will be called whenever count is updated.
@@ -32,7 +32,7 @@ function FuncCompState() {
             ={'>'} State Method In Functional Component (See Logs)
             <p>Counter: {count}</p>
             Update's the X var once above counter is updated by return in useEffect.
-            <p>X(Wait 1 sec to update): {x}</p>
+            <p className="mb-2">X(Wait 1 sec to update): {x}</p>
             <button onClick={increment}>Count</button>
         </div>
     )

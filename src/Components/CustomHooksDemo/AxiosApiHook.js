@@ -4,11 +4,11 @@ import './CommonHook.css';
 import urlList from '../../Assets/files/apiUrl.json';
 
 export default function AxiosApiHook() {
-    const [apiUrl, setApiUrl] = useState('./jsonData.json');
+    const [apiUrl, setApiUrl] = useState('../jsonData.json');
     //using custom hook and it's variables for fetching data from api call.
     const { fetchData, setFetchData, loadingData, error, getData } = useAxios(apiUrl);
 
-    const getUrlOnchange = (e) => e.target.value ? setApiUrl(e.target.value) : setApiUrl('./jsonData.json')
+    const getUrlOnchange = (e) => e.target.value ? setApiUrl(e.target.value) : setApiUrl('../jsonData.json')
 
     return (
         <div className='mb-3'>
@@ -59,7 +59,7 @@ export default function AxiosApiHook() {
                             }
                         </div>
             }
+            <br />
         </div>
-
     )
 }

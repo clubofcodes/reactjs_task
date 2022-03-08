@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 class Todo extends React.Component {
 
@@ -13,7 +13,6 @@ class Todo extends React.Component {
     render() {
         return (
             <>
-                <hr />
                 <p className='topic-heading'> ={'>'} TODO ~ Add Task (Class Component Demo)</p>
                 <form className='mb-2' onSubmit={this.handleSubmit}>
                     <label htmlFor="new-todo">What needs to be done?</label>

@@ -18,7 +18,8 @@ export default function useSystemInfo() {
             window.innerWidth,
             window.outerHeight,
             window.outerWidth, !(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))]);
-        })
+        });
+        return () => window.removeEventListener("resize", () => console.log('Sucessfully unmount!!'));
     }, []);
 
     return info;

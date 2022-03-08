@@ -43,9 +43,10 @@ class ConditionApproaches extends Component {
     render() {
         return (
             <div>
-                <br />
+                <hr />
                 ={'>'} Diffrent types of Condition Approaches.
-                <div><button onClick={this.changeState}>Change State (T/F)</button></div>
+                <p className="mb-1">{this.state.isShow ? 'User Access Granted, Can Check approaches.' : 'Invalid User'}</p>
+                <div className="mb-2"><button onClick={this.changeState}>Change State (T/F)</button></div>
                 <button onClick={this.firstApproach}>First Approach</button>
                 <button onClick={this.elementApproach}>Second Approach</button>
                 <button onClick={this.ternaryApproach.bind(this)}>Third Approach</button>

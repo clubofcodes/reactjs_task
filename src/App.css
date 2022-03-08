@@ -5,6 +5,7 @@
 main {
   overflow-x: hidden !important;
   overflow-y: auto !important;
+  height: 100% !important;
 }
 
 .logo-img {

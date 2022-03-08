@@ -6,7 +6,6 @@ export default function CopyToClipboard() {
 
     return (
         <div>
-            <br />
             <p className='topic-heading'>={'>'} Copy to clipboard using navigator object and execCommand method</p>
             <div className="div-flex">
                 <input type="text" name="copyTextInput" id="copyTextInput" value={copyText} placeholder="Enter anything to copy..." onChange={handleCopyText} />

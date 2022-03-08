@@ -1,6 +1,7 @@
 /* Scrollbar custom design */
 ::-webkit-scrollbar {
     width: 6px;
+    height: 5px !important;
 }
 
 ::-webkit-scrollbar-thumb {

@@ -6,7 +6,6 @@ import { validationSchema } from '../../Validations/YupValSchema';
 export default function FormikForm() {
     return (
         <div>
-            <hr />
             <p className='topic-heading'>={'>'} React Form Using Formik Library</p>
             <Formik
                 initialValues={{ firstName: '', lastName: '', email: '', password: '', cpassword: '' }}

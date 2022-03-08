@@ -52,6 +52,7 @@ export default function HookForm() {
                     <button className='btn round btn-danger shadow-none' type="reset" onClick={() => reset()}>Reset</button>
                 </div>
             </form>
+            <br />
         </div>
     )
 }

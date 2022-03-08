@@ -15,7 +15,7 @@ class ParentComponent extends Component {
     render() {
         return (
             <div>
-                <br />
+                <hr />
                 ={'>'} Parent-Child Component Relationship.
                 <ChildComp greetHandler={this.greetParent.bind(this)} />
             </div>

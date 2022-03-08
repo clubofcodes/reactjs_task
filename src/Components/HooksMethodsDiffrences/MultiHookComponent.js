@@ -33,8 +33,7 @@ export default function MultiHookComponent() {
 
   return (
     <div>
-      <hr />
-      <p>={'>'} Multiple Hooks Diffrences</p>
+      <p>={'>'} Multiple Hooks Diffrences (i.e., memo vs regular and useMemo vs useCallback)</p>
       <p className="mb-1">MainComp Increment Value: {mainValue}</p>
       {/* Increments the mainValue state, first memoComp is re-render as randomNum func refrence changes
       each time, which is passed as props in MemoComponent.
@@ -56,6 +55,7 @@ export default function MultiHookComponent() {
       <div className="div-flex mb-3">
         <strong className="rectanglebg text-danger text-wrap">Note: Particular getLargestNum func will not re-compute whenever component re-renders when we click on increment button. Because I applied useMemo() logic to memorize the computed value by that function(i.e.,15). That function will only recompute(see logs) the memoized value when one of the deps(array) has changed. Click change array and new memorized value will be 35.</strong>
       </div>
+      <br />
     </div>
   )
 }

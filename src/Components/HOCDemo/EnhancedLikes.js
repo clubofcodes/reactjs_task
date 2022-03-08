@@ -5,9 +5,9 @@ class LikesCount extends Component {
     render() {
         return (
             <div>
-                <p className="topic-heading mt-4">={'>'}HOC Demo of Counters</p>
+                <p className="topic-heading">={'>'}Common Counters using HOC in class component</p>
                 Total Likes : {this.props.CountNumber} <br />
-                <button onClick={this.props.handleCLick}>Like👍🏻</button>
+                <button className="mb-3" onClick={this.props.handleCLick}>Like👍🏻</button>
             </div>
         );
     }

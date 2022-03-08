@@ -15,13 +15,13 @@ class CssDemo extends Component {
         let propColorVar = this.props.warning ? 'text-warning' : '';
         return (
             <div>
-                <br />
                 <hr />
                 <h1 className={styles.change_heading}>Module Style</h1>
                 <p style={internal_style}>Internal Style</p>
                 <p style={{margin:'5px'}}>Inline Style</p>
                 <p style={{color: colorVar, margin: marginVar}}>Variable Style</p>
                 <p className={`${propColorVar} text-xl-center`} style={{margin:'5px'}}>Props Style</p>
+                <br />
             </div>
         )
     }

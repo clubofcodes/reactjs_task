@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../Assets/Css/custom.css';
-import {CallApiBtn} from './ContextCallApiFuncComp';
+import { CallApiBtn } from './ContextCallApiFuncComp';
 
 //Defining context and exporting for sending object with callback() to another component.
 export const UserContext = React.createContext({ callApi: (response) => response })
@@ -44,17 +44,16 @@ export default class AjaxFetchClassComp extends Component {
     //which is called by another component using contextApi callback method.
     showApiError = () => {
         this.setState({ isErrWaiting: true }); //To validate first condition to true for rendering the Loading <div>
-        fetch("http://localhost:301/studData").then(response => response.json()).then((resData) => this.setState({ students: resData, isLoaded: true, error: '' }, () => this.countDown(this.state.dataLoadTime, false)),(error) => this.setState({ error, isErrWaiting: false, students: ['First'] }, () => this.countDown(this.state.resWaitTime, true)))
+        fetch("http://localhost:301/studData").then(response => response.json()).then((resData) => this.setState({ students: resData, isLoaded: true, error: '' }, () => this.countDown(this.state.dataLoadTime, false)), (error) => this.setState({ error, isErrWaiting: false, students: ['First'] }, () => this.countDown(this.state.resWaitTime, true)))
     }
 
     render() {
         return (
             //Another component onClick event: if condition to display loading at first.
-            (this.state.isErrWaiting) ? <div><hr /><p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>Loading...</div> :
+            (this.state.isErrWaiting) ? <div><p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>Loading...</div> :
                 //Shows error thrown by first/second api with countdown from 5 to 1sec and then calls second api.
-                (this.state.error !== '') ? <div><hr /><p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>{this.state.students[0]} APIs Error: <p className='error-tag mt-1'>{this.state.error.message}</p> (wait for {this.state.resWaitTime}sec to fetch data)</div> :
+                (this.state.error !== '') ? <div><p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>{this.state.students[0]} APIs Error: <p className='error-tag mt-1'>{this.state.error.message}</p> (wait for {this.state.resWaitTime}sec to fetch data)</div> :
                     <div>
-                        <hr />
                         <p className='topic-heading'>={'>'} AJAX and APIs calls using fetch() in Class Component.</p>
                         {/* Hides the button of another component after data is loaded. */}
                         {(!this.state.isLoaded && <UserContext.Provider value={{ name: 'RJ', callApi: this.showApiError }}> <CallApiBtn /> </UserContext.Provider>)}

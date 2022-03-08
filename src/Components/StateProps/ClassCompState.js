@@ -43,9 +43,10 @@ class ClassCompState extends Component {
     render() {
         return (
             <div>
+                <hr />
                 ={'>'} State Method In Class Component. (See Logs)
-                <p>{this.state.text}</p>
-                <p>Counter: {this.state.count}</p>
+                <p className="mb-0">{this.state.text}</p>
+                <p className="mb-1">Counter: {this.state.count}</p>
                 <button onClick={this.increment}>Count</button>
             </div>
         )

@@ -1,5 +1,6 @@
+import './NavbarTopicList.css';
 import navLogo from '../../Assets/img/react_512.png';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 export const NavbarTopicList = () => {
@@ -13,10 +14,25 @@ export const NavbarTopicList = () => {
             <NavLink className="nav-link" to="/comptype">Components Type</NavLink>
             <NavLink className="nav-link" to="/lifecycle">Lifecycle</NavLink>
             <NavLink className="nav-link" to="/state&amp;props">State &amp; Props</NavLink>
-            <NavLink className="nav-link" to="/hooks&amp;methods">Hooks vs Methods</NavLink>
-            <NavLink className="nav-link" to="/context">ContextAPI</NavLink>
+            <NavLink className="nav-link" to="/events&amp;conditions">Events &amp; Conditions</NavLink>
+            <NavDropdown title="Hooks vs Methods" id="collasible-nav-dropdown">
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/hooks/memo&amp;callback">Prevent Re-render Hook</NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/hoc/counters">HOC For Counters</NavLink></NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/methods/createRef">Create Ref Method</NavLink></NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="APIs" id="collasible-nav-dropdown">
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/context">Context API</NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/fetch">Fetch API</NavLink></NavDropdown.Item>
+            </NavDropdown>
             <NavLink className="nav-link" to="/formslib">Form Libraries</NavLink>
-            <NavLink className="nav-link" to="/customhooks">Custom Hooks</NavLink>
+            <NavDropdown title="Custom Hooks" id="collasible-nav-dropdown">
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/axiosapicall">Axios API</NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/sysinfo">System Info</NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/formvalidations">Form Validations</NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/arrayoperations">Array Operations</NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/copy2clipboard">Copy to Clipboard</NavLink></NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -6,7 +6,6 @@ const CounterHOC = (UserComponent, data) => {
     return class extends React.Component {
         constructor(props) {
             super(props);
-            console.log('Ddsff');
             this.state = {
                 count: data,
             };

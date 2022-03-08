@@ -36,12 +36,12 @@ class Lifecycle extends Component {
         console.log('Lifecycle\'s componentDidUpdate!!');
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         console.log('Lifecycle\'s componentWillUnmount!!');
     }
 
-    changeState = () =>{
-        this.setState({name: 'RJ'});
+    changeState = () => {
+        this.setState({ name: 'RJ' });
         console.log('------------Lifecycle\'s after updating variable name in state------------');
     }
 
@@ -49,8 +49,7 @@ class Lifecycle extends Component {
         console.log('Lifecycle\'s Rendering Method!! ', this.state.name);
         return (
             <div>
-                <hr />
-                <p className='topic-heading'>={'>'} Lifecycle ~ To see logs of other Lifecycle methods click below button.</p>
+                <p className='topic-heading'>={'>'} Lifecycle ~ To see other lifecycle methods click below button (Observe logs).</p>
                 <button className='mb-2' onClick={this.changeState}>Change State</button>
             </div>
         )

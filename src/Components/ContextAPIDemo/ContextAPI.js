@@ -7,7 +7,6 @@ class ContextAPI extends Component {
   render() {
     return (
       <div>
-        <hr />
         {/* Method - 1: Globally valid for multiple context. */}
         <UserConsumer>
           {

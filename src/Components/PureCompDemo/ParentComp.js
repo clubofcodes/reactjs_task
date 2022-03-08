@@ -21,6 +21,7 @@ class ParentComp extends Component {
         console.log('----------Parent Component----------');
         return (
             <div>
+                <hr />
                 <p className='topic-heading'>={'>'} Pure Component Vs Regular Component</p>
                 <RegComp name={this.state.name} />
                 <PureComp name={this.state.name} />
