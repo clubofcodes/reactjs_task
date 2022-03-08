@@ -1,8 +1,12 @@
+html,body, #root{
+  height: 100% !important;
+}
+
 body {
-  margin: 0;
+  margin: 0 !important;
   background-color: #282c34 !important;
   color: white !important;
-  padding: 2rem 10rem !important;
+  /* padding: 2rem 10rem !important; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,8 +15,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @media only screen and (max-width: 992px) {

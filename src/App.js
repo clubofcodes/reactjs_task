@@ -27,91 +27,109 @@ import CopyToClipboard from './Components/CustomHooksDemo/CopyToClipboard';
 import MultiHookComponent from './Components/HooksMethodsDiffrences/MultiHookComponent';
 import EnhancedLikes from './Components/HOCDemo/EnhancedLikes';
 import EnhancedComments from './Components/HOCDemo/EnhancedComments';
+import { Route, Routes } from 'react-router-dom';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
 function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className='App-flip-box'>
-          <div className='App-flip-box-inner'>
-            <div className='App-flip-box-front'>
-              <img src={logo} className="App-logo" alt="logo" />
-            </div>
-            <div className='App-flip-box-back'>
-              <div>
-                {/* use the 'owner_name' attribute assigned in index.js. */}
-                Hello, {props.owner_name.fname} {props.owner_name.lname}
-                <p>Welcome to React World!</p>
+    <main className="react-components d-flex flex-column position-relative">
+      <Routes>
+        <Route path='/' element={
+          <header className="App-header">
+            <div className='App-flip-box'>
+              <div className='App-flip-box-inner'>
+                <div className='App-flip-box-front'>
+                  <img src={logo} className="App-logo" alt="logo" />
+                </div>
+                <div className='App-flip-box-back d-flex align-items-center justify-content-center px-3'>
+                  <div>
+                    {/* use the 'owner_name' attribute assigned in index.js. */}
+                    Hello, {props.owner_name.fname} {props.owner_name.lname}
+                    <p>Welcome to React World!</p>
+                    <p>Name is from Parent Component using props.</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer"> Learn React </a>
-      </header>
-      <div className='react-components'>
-        <div className='day-1'>
-          <Todo />
-        </div>
+            <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer"> Learn React </a>
+          </header>
+        } />
 
-        <div className='day-2'>
-          <Lifecycle />
-          <ParentComp />
-        </div>
+        {/* <Route path="/" element={<><Todo />, <ParentComp />, <ParentComponent /></>} /> */}
+        <Route path='/comptype' element={[<Todo />, <ParentComp />, <ParentComponent />]} />
+        <Route path='/lifecycle' element={<Lifecycle />} />
+        <Route path='/state&amp;props' />
+        <Route path='/hooks&amp;methods' />
+        <Route path='/context' />
+        <Route path='/formslib' />
+        <Route path='/customhooks' />
 
-        <div className='day-3'>
-          <ClassCompProps shortName="RJ" fullName="Rahul Jagetia" />
-          <FuncCompProps shortName="RJ" fullName="Rahul Jagetia">
-            <p>This is children props of P-Tag.</p>
-          </FuncCompProps>
-          <ClassCompState />
-          <FuncCompState />
-          <EventBind />
-          <ParentComponent />
-          <ConditionApproaches />
-        </div>
+        <Route path='*' element={
+          <div className='react-components'>
+            <div className='day-1'>
+              <Todo />
+            </div>
 
-        <div className='day-4'>
-          <CssDemo warning={true} />
-        </div>
+            <div className='day-2'>
+              <Lifecycle />
+              <ParentComp />
+            </div>
 
-        <div className='day-5'>
-          <MultiHookComponent />
-          <EnhancedLikes />
-          <EnhancedComments />
-        </div>
+            <div className='day-3'>
+              <ClassCompProps shortName="RJ" fullName="Rahul Jagetia" />
+              <FuncCompProps shortName="RJ" fullName="Rahul Jagetia">
+                <p>This is children props of P-Tag.</p>
+              </FuncCompProps>
+              <ClassCompState />
+              <FuncCompState />
+              <EventBind />
+              <ParentComponent />
+              <ConditionApproaches />
+            </div>
 
-        <div className='day-6'>
-          <UserProvider value='RJ'>
-            <ContextAPI />
-          </UserProvider>
-          {/* <UserContext.Provider value='SecondWay to Use provider'>
+            <div className='day-4'>
+              <CssDemo warning={true} />
+            </div>
+
+            <div className='day-5'>
+              <MultiHookComponent />
+              <EnhancedLikes />
+              <EnhancedComments />
+            </div>
+
+            <div className='day-6'>
+              <UserProvider value='RJ'>
+                <ContextAPI />
+              </UserProvider>
+              {/* <UserContext.Provider value='SecondWay to Use provider'>
             <ContextAPI />
           </UserContext.Provider> */}
-        </div>
+            </div>
 
-        <div className='day-8'>
-          <FormikForm />
-          <HookForm />
-        </div>
+            <div className='day-8'>
+              <FormikForm />
+              <HookForm />
+            </div>
 
-        <div className='day-9'>
-          <AjaxFetchClassComp />
-        </div>
+            <div className='day-9'>
+              <AjaxFetchClassComp />
+            </div>
 
-        <div className='day-10'>
-          <hr />
-          <p className='topic-heading'>={'>'} Custom Hooks Demo in Function Component using De-Structuring method.</p>
-          <AxiosApiHook />
-          <DisplaySystemInfo />
-          <ShowCurrentLocation />
-          <FormDataStorage />
-          <ArrayOperations />
-          <CopyToClipboard />
-        </div>
-      </div>
-    </div>
+            <div className='day-10'>
+              <hr />
+              <p className='topic-heading'>={'>'} Custom Hooks Demo in Function Component using De-Structuring method.</p>
+              <AxiosApiHook />
+              <DisplaySystemInfo />
+              <ShowCurrentLocation />
+              <FormDataStorage />
+              <ArrayOperations />
+              <CopyToClipboard />
+            </div>
+          </div>
+        } />
+      </Routes>
+    </main>
   );
 }
 

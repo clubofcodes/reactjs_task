@@ -2,25 +2,37 @@
   box-sizing: border-box;
 }
 
-.App {
-  text-align: center !important;
-  display: flex !important;
-  /*shorthand of flex-direction and flex-wrap*/
-  flex-flow: column nowrap !important;
-  justify-content: center;
+main {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.logo-img {
+  max-width: 55px !important;
+  height: auto !important;
 }
 
 .App-header {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  justify-content: center !important;
   margin: 10px !important;
+  height: 100% !important;
+}
+
+.centered {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translate(-50px, -50px) !important;
 }
 
 .App-flip-box, .App-logo {
   background-color: transparent;
-  width: 250px !important;
-  height: 180px !important;
+  width: 360px !important;
+  height: 260px !important;
   perspective: 1000px;
   margin-bottom: 15px;
   border-radius: 50px 5px;
@@ -54,11 +66,10 @@
 }
 
 .App-flip-box-back {
-  background-color: black;
-  color: white;
-  padding: 50px 10px !important;
-  font-size: medium;
-  transform: rotateY(180deg);
+  background-color: black !important;
+  color: white !important;
+  font-size: larger !important;
+  transform: rotateY(180deg) !important;
 }
 
 .App-link {
