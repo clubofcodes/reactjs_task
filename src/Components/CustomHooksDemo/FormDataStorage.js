@@ -23,13 +23,13 @@ export default function FormDataStorage() {
                     <label htmlFor="firstname">Email:</label>
                     <input type="text" className="ml-2" placeholder='Enter your email . . .' name='email' />
                 </div>
-                <div className='offset-4 col-sm-6 offset-2 pl-2 error-tag mb-3'>{errors.emailErr && errors.emailErr}</div>
+                <div className='offset-4 col-sm-8 pl-2 error-tag mb-3'>{errors.emailErr && errors.emailErr}</div>
 
                 <div className='innertag-flex'>
                     <label htmlFor="firstname">Password:</label>
                     <input type="password" className="ml-2" placeholder='Enter your password . . .' name='password' />
                 </div>
-                <div className='offset-4 col-sm-6 offset-2 pl-2 error-tag mb-3'>{errors.passwordErr && errors.passwordErr}</div>
+                <div className='offset-4 col-sm-8 pl-2 error-tag mb-3'>{errors.passwordErr && errors.passwordErr}</div>
 
                 <div className='form-btn-group'>
                     <button type="submit" className="btn round btn-primary shadow-none">Signup</button>

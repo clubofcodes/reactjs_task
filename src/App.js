@@ -28,14 +28,19 @@ import MultiHookComponent from './Components/HooksMethodsDiffrences/MultiHookCom
 import EnhancedLikes from './Components/HOCDemo/EnhancedLikes';
 import EnhancedComments from './Components/HOCDemo/EnhancedComments';
 import { Route, Routes } from 'react-router-dom';
+import { PageNotFound } from './Layouts/PageNotFound/PageNotFound';
+import { LoginSignupForm } from './Screens/LoginSignupForm';
+import { Dashboard } from './ProtectedScreens/Dashboard';
+import { ProtectComponent } from './Utils/ProtectComponent';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
 function App(props) {
   return (
-    <main className="react-components d-flex flex-column position-relative p-4">
-      <div className="container px-5 h-100">
+    <main className="react-components d-flex flex-column position-relative pt-4 p-md-4 p-sm-0">
+      <div className="container px-md-5 p-sm-0 h-100">
         <Routes>
+          {/* Default path to show image and introduction */}
           <Route path='/' element={
             <header className="App-header">
               <div className='App-flip-box'>
@@ -81,70 +86,16 @@ function App(props) {
           <Route path='/customhooks/formvalidations' element={<FormDataStorage />} />
           <Route path='/customhooks/arrayoperations' element={<ArrayOperations />} />
           <Route path='/customhooks/copy2clipboard' element={<CopyToClipboard />} />
-
-          <Route path='*' element={
-            <div className='react-components'>
-              <div className='day-1'>
-                <Todo />
-              </div>
-
-              <div className='day-2'>
-                <Lifecycle />
-                <ParentComp />
-              </div>
-
-              <div className='day-3'>
-                <ClassCompProps shortName="RJ" fullName="Rahul Jagetia" />
-                <FuncCompProps shortName="RJ" fullName="Rahul Jagetia">
-                  <p>This is children props of P-Tag.</p>
-                </FuncCompProps>
-                <ClassCompState />
-                <FuncCompState />
-                <EventBind />
-                <ParentComponent />
-                <ConditionApproaches />
-              </div>
-
-              <div className='day-4'>
-                <CssDemo warning={true} />
-              </div>
-
-              <div className='day-5'>
-                <MultiHookComponent />
-                <EnhancedLikes />
-                <EnhancedComments />
-              </div>
-
-              <div className='day-6'>
-                <UserProvider value='RJ'>
-                  <ContextAPI />
-                </UserProvider>
-                {/* <UserContext.Provider value='SecondWay to Use provider'>
-            <ContextAPI />
-          </UserContext.Provider> */}
-              </div>
-
-              <div className='day-8'>
-                <FormikForm />
-                <HookForm />
-              </div>
-
-              <div className='day-9'>
-                <AjaxFetchClassComp />
-              </div>
-
-              <div className='day-10'>
-                <hr />
-                <p className='topic-heading'>={'>'} Custom Hooks Demo in Function Component using De-Structuring method.</p>
-                <AxiosApiHook />
-                <DisplaySystemInfo />
-                <ShowCurrentLocation />
-                <FormDataStorage />
-                <ArrayOperations />
-                <CopyToClipboard />
-              </div>
-            </div>
+          <Route path='/register' element={<LoginSignupForm />} />
+          <Route path='/login' element={<LoginSignupForm />} />
+          <Route path='/dashboard' element={
+            //ProtectComponent Protects it's child component from accessing without login.
+            <ProtectComponent>
+              <Dashboard />
+            </ProtectComponent>
           } />
+          {/* If path not found than so particular page with msg. */}
+          <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>
     </main>

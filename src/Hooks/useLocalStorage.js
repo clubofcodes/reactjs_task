@@ -15,7 +15,7 @@ const useLocalStorage = (key, initialValues) => {
     const setValueToLocalStorage = (values) => {
         try {
             // const valueToStore = values instanceof Function ? values(storedLocalData) : [...new Map(values.map(value => [JSON.stringify(value), value])).values()];
-            const valueToStore = [...new Map(values.map(value => [JSON.stringify(value), value])).values()];
+            const valueToStore = [...new Map(values.map(value => [JSON.stringify(value.email), value])).values()];
             setLocalData(valueToStore);
             window.localStorage.setItem(key, JSON.stringify(valueToStore));
         } catch (error) {

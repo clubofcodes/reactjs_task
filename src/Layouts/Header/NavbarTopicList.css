@@ -1,3 +1,47 @@
-.dropdown-item:active{
-    background-color: transparent !important;
+/* Default color variables */
+:root {
+    --normal-white: 255,255,255;
+    --light-WG-alpha: rgba(227, 227, 227, 1);
+    --black-alpha: rgba(0, 0, 0, 0.6);
+    --light-black: #262a2b;
+    --dark-grey: rgba(102, 102, 102, 1);
+    --pure-black: rgb(0, 0, 0);
+    --trans-bg: transparent;
+}
+
+
+/* for vertical line */
+.border-divider {
+    display: inline-block;
+    width: 0 !important;
+    height: 1.8vmax !important;
+    border-left: 1.5px solid rgba(var(--normal-white), .55);
+}
+
+/* for small icons and logos */
+.user-icon {
+    margin-left: 0.3125rem !important;
+    margin-bottom: 0.125rem !important;
+    max-width: 1.25rem !important;
+    height: auto !important;
+}
+
+/* user login and join button font-weight */
+.user-auth-btn {
+    color: rgba(var(--normal-white), .55);
+    font-weight: 600 !important;
+}
+
+/* on hover & click change defaults. */
+.user-auth-btn:active, .user-auth-btn:focus, .user-auth-btn:hover {
+    color: var(--light-WG-alpha) !important;
+    box-shadow: none !important;
+}
+/* 
+.user-auth-btn:focus {
+    color: #212529 !important;
+} */
+
+.dropdown-item:active {
+    background-color: var(--trans-bg) !important;
 }

@@ -1,9 +1,14 @@
 import './NavbarTopicList.css';
 import navLogo from '../../Assets/img/react_512.png';
+import user from '../../Assets/img/user.png';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { useAuthentication } from '../../Utils/useAuthentication';
 
 export const NavbarTopicList = () => {
+  // Custom hook to verify user is loged in or not using global context.
+  const userAuth = useAuthentication();
+
   return (
     <Navbar className="px-3 p-0 border-bottom" bg="dark" variant='dark' expand="lg">
       <Container fluid className="p-0">
@@ -33,7 +38,16 @@ export const NavbarTopicList = () => {
               <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/arrayoperations">Array Operations</NavLink></NavDropdown.Item>
               <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/copy2clipboard">Copy to Clipboard</NavLink></NavDropdown.Item>
             </NavDropdown>
+            <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
           </Nav>
+          { //If user is loged in then will hide signin & signup buttons.
+            !(userAuth?.user) &&
+            <Nav className="ms-auto align-items-center flex-row flex-nowrap justify-content-center">
+              <Link className="btn user-auth-btn" to="/register" state={{ fieldStyle: 'form-group', errStyle: 'offset-5 col-sm-7', btnText: 'Sign Up' }}>Sign Up</Link>
+              <span className="border-divider"></span>
+              <Link className="d-flex align-items-center btn user-auth-btn" to="/login" state={{ fieldStyle: 'form-group d-none', errStyle: 'd-none', btnText: 'Sign In' }}>Sign In <div><img src={user} className="user-icon" alt="User Icon" /></div></Link>
+            </Nav>
+          }
         </Navbar.Collapse>
       </Container>
     </Navbar>
