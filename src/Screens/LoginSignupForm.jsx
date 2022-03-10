@@ -7,6 +7,7 @@ import { loginValidationSchema } from '../Validations/loginValidationSchema';
 import useLocalStorage from '../Hooks/useLocalStorage';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthentication } from '../Utils/useAuthentication';
+import { Buffer } from 'buffer';
 
 export const LoginSignupForm = () => {
     const location = useLocation();
@@ -35,32 +36,41 @@ export const LoginSignupForm = () => {
     //New state for displaying the particular msg for loginForm.
     const [isLogin, setIsLogin] = useState('New');
 
+    //Function that returns normal string passed in params to encrypted string.
+    const toEncrypt = (strValue) => Buffer.from(strValue).toString('base64');
+
     const onSubmit = (signupData) => {
         //Checks whether user has submitted data from LoginForm or SignupForm.
         if (btnText === "Sign Up") {
+            // fetching keys from signupData object.
+            const { email, username, password, cpassword, pnumber, city, state } = signupData;
+            // storing object of encrypted values into new variable to pass into localstorage.
+            const encryptedDataObj = { email: toEncrypt(email), username: toEncrypt(username), password: toEncrypt(password), cpassword: toEncrypt(cpassword), pnumber: toEncrypt(pnumber), city: toEncrypt(city), state: toEncrypt(state) }
+            console.log('Joi leh encrypted data: ', encryptedDataObj);
+
             let isvalid = false;
             //To check localstorage has any data or not else store new data and reset input values.
             if (storedLocalData.length > 0) {
                 // To verify that user exists in localSorage or not.
-                storedLocalData.map(prevData => (prevData.email === signupData.email) && (isvalid = true))
+                storedLocalData.map(prevData => (prevData.email === toEncrypt(signupData.email)) && (isvalid = true))
                 //If user exists then print particular msg using state value 'No' else other msg using 'Yes'.
                 if (isvalid) setIsRegistered('No');
                 else {
                     setIsRegistered('Yes'); //store Yes in state for signup successfully.
                     //User input value is stored in array of objects in formData state.
-                    setFormData([...formData, signupData]);
+                    setFormData([...formData, encryptedDataObj]);
                     reset();
                 }
             } else {
                 setIsRegistered('Yes'); //store Yes in state for signup successfully.
-                setFormData([...formData, signupData]);
+                setFormData([...formData, encryptedDataObj]);
                 reset(); //To reset inputs&errors when data submitted successfully and stored.
             }
         }
         // When LoginForm is used.
         else (storedLocalData.length > 0) ? storedLocalData.some(prevData => {
             //Will validate the user is already register then redirect to dashboard. 
-            if (prevData.email === signupData.email) {
+            if (prevData.email === toEncrypt(signupData.email)) {
                 userAuth.login(signupData.email); //sets email in state of global context.
                 //navigates to dashboard if user is registerd.
                 //replace true will help to avoid going back to login page from back button.
