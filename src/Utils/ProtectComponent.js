@@ -8,5 +8,5 @@ export const ProtectComponent = ({ children }) => {
   const userAuth = useAuthentication();
 
   // To redirect to login page if user is accessing children component without login.
-  return (!userAuth.user) ? <Navigate to='/login' state={{ path: location.pathname, fieldStyle: 'form-group d-none', errStyle: 'd-none', btnText: 'Sign In' }} /> : children;
+  return (!userAuth.userData) ? <Navigate to='/login' state={{ path: location.pathname, fieldStyle: 'form-group d-none', errStyle: 'd-none', btnText: 'Sign In' }} /> : children;
 }

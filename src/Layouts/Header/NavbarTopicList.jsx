@@ -41,7 +41,7 @@ export const NavbarTopicList = () => {
             <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
           </Nav>
           { //If user is loged in then will hide signin & signup buttons.
-            !(userAuth?.user) &&
+            !(userAuth?.userData) &&
             <Nav className="ms-auto align-items-center flex-row flex-nowrap justify-content-center">
               <Link className="btn user-auth-btn" to="/register" state={{ fieldStyle: 'form-group', errStyle: 'offset-5 col-sm-7', btnText: 'Sign Up' }}>Sign Up</Link>
               <span className="border-divider"></span>

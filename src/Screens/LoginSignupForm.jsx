@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import '../../Components/Forms/FormikForm.css';
+import '../Components/Forms/FormikForm.css';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { validationSchema } from '../Validations/SignupValSchema';
 import { loginValidationSchema } from '../Validations/loginValidationSchema';
 import useLocalStorage from '../Hooks/useLocalStorage';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthentication } from '../Utils/useAuthentication';
 
 export const LoginSignupForm = () => {
@@ -85,7 +85,7 @@ export const LoginSignupForm = () => {
             {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
             {isRegistered === 'No' && <p>User already registered!!</p>}
             {isRegistered === 'Yes' && <p>Successfully registered {'&'} stored data in localStorage.</p>}
-            {isLogin === 'No' && <p className='topic-heading text-danger' style={{ fontSize: 'large', fontWeight: '600' }}>User doesn't exist, go to signup for registration.</p>}
+            {isLogin === 'No' && <p className='topic-heading text-danger' style={{ fontSize: 'large', fontWeight: '600' }}>User doesn't exist, go to <Link to="/register" state={{ fieldStyle: 'form-group', errStyle: 'offset-5 col-sm-7', btnText: 'Sign Up' }}>signup</Link> for registration.</p>}
             <form onSubmit={handleSubmit(onSubmit)} className="text-start form-card">
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
