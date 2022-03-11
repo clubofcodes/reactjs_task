@@ -32,6 +32,7 @@ import { PageNotFound } from './Layouts/PageNotFound/PageNotFound';
 import { LoginSignupForm } from './Screens/LoginSignupForm';
 import { Dashboard } from './ProtectedScreens/Dashboard';
 import { ProtectComponent } from './Utils/ProtectComponent';
+import { DisplayWordRhymes } from './Components/WordRhymesApi/DisplayWordRhymes';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -80,6 +81,7 @@ function App(props) {
             ]
           } />
           <Route path='/api/fetch' element={<AjaxFetchClassComp />} />
+          <Route path='/api/wordrhymes' element={<DisplayWordRhymes />} />
           <Route path='/formslib' element={[<FormikForm />, <HookForm />]} />
           <Route path='/customhooks/axiosapicall' element={<AxiosApiHook />} />
           <Route path='/customhooks/sysinfo' element={[<DisplaySystemInfo />, <ShowCurrentLocation />]} />
