@@ -32,6 +32,7 @@ export const NavbarTopicList = () => {
               <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/context">Context API</NavLink></NavDropdown.Item>
               <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/fetch">Fetch API</NavLink></NavDropdown.Item>
               <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/wordrhymes">Word Rhymes API</NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/news">News API TableView</NavLink></NavDropdown.Item>
             </NavDropdown>
             <NavLink className="nav-link" to="/formslib">Form Libraries</NavLink>
             <NavDropdown title="Custom Hooks" id="collasible-nav-dropdown">

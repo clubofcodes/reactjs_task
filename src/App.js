@@ -37,6 +37,8 @@ import ErrorBoundary from './Utils/ErrorBoundary';
 import ErrB from './Components/ErrBoundaryDemo/ErrB';
 import CreateRef from './Components/HooksMethodsDiffrences/CreateRef';
 import { UseRef } from './Components/HooksMethodsDiffrences/UseRef';
+import { NewsApiTableView } from './Components/RestAPIsHttpMethods/NewsApi/NewsApiTableView';
+import { AdditionalDetails } from './Components/RestAPIsHttpMethods/NewsApi/AdditionalDetails';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -95,6 +97,8 @@ function App(props) {
           } />
           <Route path='/api/fetch' element={<AjaxFetchClassComp />} />
           <Route path='/api/wordrhymes' element={<DisplayWordRhymes />} />
+          <Route path='/api/news' element={<NewsApiTableView />} />
+          <Route path='/api/news/:id' element={<AdditionalDetails />} />
           <Route path='/formslib' element={[<FormikForm />, <HookForm />]} />
           <Route path='/customhooks/axiosapicall' element={<AxiosApiHook />} />
           <Route path='/customhooks/sysinfo' element={[<DisplaySystemInfo />, <ShowCurrentLocation />]} />
