@@ -32,7 +32,7 @@ import { PageNotFound } from './Layouts/PageNotFound/PageNotFound';
 import { LoginSignupForm } from './Screens/LoginSignupForm';
 import { Dashboard } from './ProtectedScreens/Dashboard';
 import { ProtectComponent } from './Utils/ProtectComponent';
-import { DisplayWordRhymes } from './Components/WordRhymesApi/DisplayWordRhymes';
+import { DisplayWordRhymes } from './Components/RestAPIsHttpMethods/WordRhymesApi/DisplayWordRhymes';
 import ErrorBoundary from './Utils/ErrorBoundary';
 import ErrB from './Components/ErrBoundaryDemo/ErrB';
 import CreateRef from './Components/HooksMethodsDiffrences/CreateRef';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useAxios from '../../Hooks/useAxios';
+import useAxios from '../../../Hooks/useAxios';
 
 export const DisplayWordRhymes = () => {
 
