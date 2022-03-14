@@ -16,12 +16,13 @@ function FuncCompState() {
     //To perform particular task/operation inside useEffect as per need use this hook.
     //It is somewhat like this.setState({}, callback()) <=> useEffect(callback(),dependency list)
     //at present it will display recent/updated value of count & x and than it will return some task,
-        //that increases value of x by 1 after 2sec whenever count is updated.
+    //that increases value of x by 1 after 2sec whenever count is updated.
     useEffect(() => {
         console.log('Count in useEffect: ', count);
         console.log('x in useEffect: ', x);
-        return setTimeout(() => {setX(x+1)}, 1000);
-    }, []);
+        setX(x + 1);
+        // return setTimeout(() => {setX(x+1)}, 1000);
+    }, [count]);
     //[] => is dependency list, without that it will be rendered/called everytime.
     //[] => with empty list, it will be called only once can check it by keeping empty.
     //[count] => after giving var to it, it will be called whenever count is updated.
@@ -31,8 +32,8 @@ function FuncCompState() {
             <br />
             ={'>'} State Method In Functional Component (See Logs)
             <p>Counter: {count}</p>
-            Update's the X var once above counter is updated by return in useEffect.
-            <p className="mb-2">X(Wait 1 sec to update): {x}</p>
+            Update's the X var once above counter is updated by dependency in useEffect.
+            <p className="mb-2">X(Increments as per above count variable changes): {x}</p>
             <button onClick={increment}>Count</button>
         </div>
     )
