@@ -33,6 +33,8 @@ import { LoginSignupForm } from './Screens/LoginSignupForm';
 import { Dashboard } from './ProtectedScreens/Dashboard';
 import { ProtectComponent } from './Utils/ProtectComponent';
 import { DisplayWordRhymes } from './Components/WordRhymesApi/DisplayWordRhymes';
+import ErrorBoundary from './Utils/ErrorBoundary';
+import ErrB from './Components/ErrBoundaryDemo/ErrB';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -71,6 +73,14 @@ function App(props) {
           <Route path='/hooks/memo&amp;callback' element={<MultiHookComponent />} />
           <Route path='/hoc/counters' element={[<EnhancedLikes />, <EnhancedComments />]} />
           <Route path='/methods/createRef' />
+          <Route path='/methods/errorBoundary' element={
+            <>
+              <h2>={'>'}Error Boundary Demo.</h2>
+              <ErrorBoundary>
+                <ErrB />
+              </ErrorBoundary>
+            </>
+          } />
           <Route path='/api/context' element={
             [<UserProvider value='RJ'>
               <ContextAPI />

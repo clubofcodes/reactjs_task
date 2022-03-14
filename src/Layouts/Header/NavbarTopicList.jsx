@@ -24,6 +24,7 @@ export const NavbarTopicList = () => {
               <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/hooks/memo&amp;callback">Prevent Re-render Hook</NavLink></NavDropdown.Item>
               <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/hoc/counters">HOC For Counters</NavLink></NavDropdown.Item>
               <NavDropdown.Divider />
+              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/methods/errorBoundary">Error Boundary</NavLink></NavDropdown.Item>
               <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/methods/createRef">Create Ref Method</NavLink></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="APIs" id="collasible-nav-dropdown">
