@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useAxios from '../../Hooks/useAxios';
 
 export const DisplayWordRhymes = () => {
@@ -8,16 +8,11 @@ export const DisplayWordRhymes = () => {
     // https://api.datamuse.com/words?rel_rhy=tiger
     const { fetchData, loadingData, getData } = useAxios('https://rhymebrain.com/talk?function=getRhymes&word=' + inputWord);
 
-    const searchRhymes = (e) =>{
-        e.preventDefault(); 
+    const searchRhymes = (e) => {
+        e.preventDefault();
         e.target.word.value ? setInputWord(e.target.word.value) : alert('Type any word to find it\'s rhymes.');
-        e.target.word.value = ''
+        e.target.word.value && getData()
     }
-
-    useEffect(() => {
-        getData();
-    }, [inputWord])
-
 
     return (
         <div>
