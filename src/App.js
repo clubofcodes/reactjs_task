@@ -35,6 +35,8 @@ import { ProtectComponent } from './Utils/ProtectComponent';
 import { DisplayWordRhymes } from './Components/WordRhymesApi/DisplayWordRhymes';
 import ErrorBoundary from './Utils/ErrorBoundary';
 import ErrB from './Components/ErrBoundaryDemo/ErrB';
+import CreateRef from './Components/HooksMethodsDiffrences/CreateRef';
+import { UseRef } from './Components/HooksMethodsDiffrences/UseRef';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -72,7 +74,7 @@ function App(props) {
           <Route path='/events&amp;conditions' element={[<EventBind />, <ConditionApproaches />]} />
           <Route path='/hooks/memo&amp;callback' element={<MultiHookComponent />} />
           <Route path='/hoc/counters' element={[<EnhancedLikes />, <EnhancedComments />]} />
-          <Route path='/methods/createRef' />
+          <Route path='/hooks/useRef' element={<UseRef />} />
           <Route path='/methods/errorBoundary' element={
             <>
               <h2>={'>'}Error Boundary Demo.</h2>
@@ -81,6 +83,7 @@ function App(props) {
               </ErrorBoundary>
             </>
           } />
+          <Route path='/methods/createRef' element={<CreateRef />} />
           <Route path='/api/context' element={
             [<UserProvider value='RJ'>
               <ContextAPI />
