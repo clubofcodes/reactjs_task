@@ -9,6 +9,9 @@
     --trans-bg: transparent;
 }
 
+nav *{
+    font-size: 1.1vw !important;
+}
 
 /* for vertical line */
 .border-divider {
