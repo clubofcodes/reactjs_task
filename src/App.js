@@ -39,6 +39,7 @@ import CreateRef from './Components/HooksMethodsDiffrences/CreateRef';
 import { UseRef } from './Components/HooksMethodsDiffrences/UseRef';
 import { NewsApiTableView } from './Components/RestAPIsHttpMethods/NewsApi/NewsApiTableView';
 import { AdditionalDetails } from './Components/RestAPIsHttpMethods/NewsApi/AdditionalDetails';
+import UseForwardedRef from './Components/HooksMethodsDiffrences/UseForwardedRef';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -69,14 +70,14 @@ function App(props) {
             </header>
           } />
 
-          {/* <Route path="/" element={<><Todo />, <ParentComp />, <ParentComponent /></>} /> */}
-          <Route path='/comptype' element={[<Todo />, <ParentComp />, <ParentComponent />, <CssDemo warning={true} />]} />
+          {/* <Route path="/" element={[<Todo />, <ParentComp />, <ParentComponent />]} /> */}
+          <Route path='/comptype' element={<><Todo /> <ParentComp /> <ParentComponent /> <CssDemo warning={true} /></>} />
           <Route path='/lifecycle' element={<Lifecycle />} />
-          <Route path='/state&amp;props' element={[<ClassCompProps shortName="RJ" fullName="Rahul Jagetia" />, <FuncCompProps shortName="RJ" fullName="Rahul Jagetia"><p>This is children props of P-Tag.</p></FuncCompProps>, <ClassCompState />, <FuncCompState />]} />
-          <Route path='/events&amp;conditions' element={[<EventBind />, <ConditionApproaches />]} />
+          <Route path='/state&amp;props' element={<><ClassCompProps shortName="RJ" fullName="Rahul Jagetia" /> <FuncCompProps shortName="RJ" fullName="Rahul Jagetia"><p>This is children props of P-Tag.</p></FuncCompProps> <ClassCompState /> <FuncCompState /></>} />
+          <Route path='/events&amp;conditions' element={<><EventBind /><ConditionApproaches /></>} />
           <Route path='/hooks/memo&amp;callback' element={<MultiHookComponent />} />
-          <Route path='/hoc/counters' element={[<EnhancedLikes />, <EnhancedComments />]} />
-          <Route path='/hooks/useRef' element={<UseRef />} />
+          <Route path='/hoc/counters' element={<><EnhancedLikes /> <EnhancedComments /></>} />
+          <Route path='/hooks/useRef' element={<UseRef showBtn={true} />} />
           <Route path='/methods/errorBoundary' element={
             <>
               <h2>={'>'}Error Boundary Demo.</h2>
@@ -86,22 +87,24 @@ function App(props) {
             </>
           } />
           <Route path='/methods/createRef' element={<CreateRef />} />
+          <Route path='/methods/forwardRef' element={<UseForwardedRef />} />
           <Route path='/api/context' element={
-            [<UserProvider value='RJ'>
-              <ContextAPI />
-            </UserProvider>,
-              // <UserContext.Provider value='SecondWay to Use provider'>
-              //   <ContextAPI />
-              // </UserContext.Provider>
-            ]
+            <>
+              <UserProvider value='RJ'>
+                <ContextAPI />
+              </UserProvider>
+              {/* <UserContext.Provider value='SecondWay to Use provider'>
+                <ContextAPI />
+              </UserContext.Provider> */}
+            </>
           } />
           <Route path='/api/fetch' element={<AjaxFetchClassComp />} />
           <Route path='/api/wordrhymes' element={<DisplayWordRhymes />} />
           <Route path='/api/news' element={<NewsApiTableView />} />
           <Route path='/api/news/:id' element={<AdditionalDetails />} />
-          <Route path='/formslib' element={[<FormikForm />, <HookForm />]} />
+          <Route path='/formslib' element={<><FormikForm /> <HookForm /></>} />
           <Route path='/customhooks/axiosapicall' element={<AxiosApiHook />} />
-          <Route path='/customhooks/sysinfo' element={[<DisplaySystemInfo />, <ShowCurrentLocation />]} />
+          <Route path='/customhooks/sysinfo' element={<><DisplaySystemInfo /> <ShowCurrentLocation /></>} />
           <Route path='/customhooks/formvalidations' element={<FormDataStorage />} />
           <Route path='/customhooks/arrayoperations' element={<ArrayOperations />} />
           <Route path='/customhooks/copy2clipboard' element={<CopyToClipboard />} />

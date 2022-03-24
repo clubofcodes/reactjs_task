@@ -21,26 +21,27 @@ export const NavbarTopicList = () => {
             <NavLink className="nav-link" to="/state&amp;props">State &amp; Props</NavLink>
             <NavLink className="nav-link" to="/events&amp;conditions">Events &amp; Conditions</NavLink>
             <NavDropdown title="Hooks vs Methods" id="collasible-nav-dropdown">
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/hooks/memo&amp;callback">Prevent Re-render Hook</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/hoc/counters">HOC For Counters</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/hooks/useRef">Controlled Form(useRef)</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/hooks/memo&amp;callback">Prevent Re-render Hook</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/hoc/counters">HOC For Counters</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/hooks/useRef">Controlled Form(useRef)</NavLink></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/methods/errorBoundary">Error Boundary</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/methods/createRef">Uncontrolled Form(createRef)</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/methods/errorBoundary">Error Boundary</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/methods/createRef">Uncontrolled Form(createRef)</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/methods/forwardRef">Use Forwarded Ref</NavLink></NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="APIs" id="collasible-nav-dropdown">
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/context">Context API</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/fetch">Fetch API</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/wordrhymes">Word Rhymes API</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/api/news">News API TableView</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/api/context">Context API</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/api/fetch">Fetch API</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/api/wordrhymes">Word Rhymes API</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/api/news">News API TableView</NavLink></NavDropdown.Item>
             </NavDropdown>
             <NavLink className="nav-link" to="/formslib">Form Libraries</NavLink>
             <NavDropdown title="Custom Hooks" id="collasible-nav-dropdown">
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/axiosapicall">Axios API</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/sysinfo">System Info</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/formvalidations">Form Validations</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/arrayoperations">Array Operations</NavLink></NavDropdown.Item>
-              <NavDropdown.Item><NavLink className="nav-link text-black p-0" to="/customhooks/copy2clipboard">Copy to Clipboard</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/customhooks/axiosapicall">Axios API</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/customhooks/sysinfo">System Info</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/customhooks/formvalidations">Form Validations</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/customhooks/arrayoperations">Array Operations</NavLink></NavDropdown.Item>
+              <NavDropdown.Item  as="li"><NavLink className="nav-link text-black p-0" to="/customhooks/copy2clipboard">Copy to Clipboard</NavLink></NavDropdown.Item>
             </NavDropdown>
             <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
           </Nav>

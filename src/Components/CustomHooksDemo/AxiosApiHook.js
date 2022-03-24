@@ -14,7 +14,7 @@ export default function AxiosApiHook() {
         <div className='mb-3'>
             <p className='topic-heading mb-1'>={'>'} API calls using axios <span className='text-warning'>(Default data is from local json file)</span></p>
             <div className='innertagHook-flex mb-2'>
-                <p className='mb-1 text-info'>List of Fake Api Url</p>{urlList.map((urlObj) => <div className='div-flex'><pre className='rectanglebg'>{urlObj.url}</pre></div>)}
+                <p className='mb-1 text-info'>List of Fake Api Url</p>{urlList.map((urlObj) => <div className='div-flex' key={urlObj.id}><pre className='rectanglebg'>{urlObj.url}</pre></div>)}
                 <input type="text" className='urlInput' name="apiUrl" placeholder='Enter api url to fetch data . . .' onChange={(e) => getUrlOnchange(e)} size='50' />
             </div>
             <button className='btn btn-primary btn-lg' onClick={getData}>Get Data</button>
