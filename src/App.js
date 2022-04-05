@@ -40,6 +40,7 @@ import { UseRef } from './Components/HooksMethodsDiffrences/UseRef';
 import { NewsApiTableView } from './Components/RestAPIsHttpMethods/NewsApi/NewsApiTableView';
 import { AdditionalDetails } from './Components/RestAPIsHttpMethods/NewsApi/AdditionalDetails';
 import UseForwardedRef from './Components/HooksMethodsDiffrences/UseForwardedRef';
+import SideBar from './Components/SideBar/SideBar';
 
 // React Props are like function arguments in JavaScript and attributes in HTML.
 // The component receives the argument as a props object:
@@ -110,6 +111,7 @@ function App(props) {
           <Route path='/customhooks/copy2clipboard' element={<CopyToClipboard />} />
           <Route path='/register' element={<LoginSignupForm />} />
           <Route path='/login' element={<LoginSignupForm />} />
+          <Route path='/drawer' element={<SideBar />} />
           <Route path='/dashboard' element={
             //ProtectComponent Protects it's child component from accessing without login.
             <ProtectComponent>

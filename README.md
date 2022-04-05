@@ -1,9 +1,5 @@
 # React.js Daily Topics Demo
 
-## Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Installation
 
 Download this project zip or clone:
@@ -46,7 +42,19 @@ Open [http://localhost:3000](http://localhost:3000) which is default port to vie
 The page will reload when you make changes and save the code.\
 You may also see any lint errors in the console.
 
-## Shortcuts
+## Live Project Demo:
+
+- 🧑‍💻 REACT: Training works `WebApp` Using reactjs and it's packages. (<https://reactjs-task-rahuljinexture.vercel.app/>).
+
+## WebApp Screenshot.
+
+- Home Page | Default Page.
+
+![Alt](./src/Assets/img/AppHomePage.jpg?raw=true "HomePage")
+
+## Shortcuts for vs-code.
+
+- Use below keywords in .js or .jsx file after installing `ES7+ React/Redux/React-Native snippets` vs-code extennsion.
 
 Type `rce` in .js file `=>` react class component boilerplate.\
 Type `rpce` in .js file `=>` react class purecomponent boilerplate.\
